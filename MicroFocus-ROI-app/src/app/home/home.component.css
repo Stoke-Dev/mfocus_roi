@@ -1,0 +1,69 @@
+.home-left {
+    margin: 250px;
+
+}
+
+.home-right {
+    margin: 250px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.back {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 100px;
+    background-color: #B9DCFC;
+  }
+  
+  .mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    clip: rect(0px, 100px, 100px, 50px);
+  }
+  
+  .part {
+    background-color: #3D90F9;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    clip: rect(0px, 50px, 100px, 0px);
+  }
+  
+  .anim {
+    animation: progress 3s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes progress
+  {
+  from {transform: rotate(0)}
+  to {transform: rotate(135deg)}
+  } 
+  
