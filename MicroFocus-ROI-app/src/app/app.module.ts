@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AlertModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
   { path: '',    redirectTo: '/home',    pathMatch: 'full'  },
@@ -20,7 +22,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     HomeComponent,
-    AppComponent
+    AppComponent,
+    CalculatorComponent,
+    AboutComponent
   ],
   imports: [
     AlertModule.forRoot(),
