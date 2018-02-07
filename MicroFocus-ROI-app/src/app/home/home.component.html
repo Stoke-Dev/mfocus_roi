@@ -1,9 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <alert type="success">App loaded. Welcome to {{ title }}</alert>
  </div>
-<div class="row">
-  <div class="col home-left" >
+<div class="row home-objects">
+  <div class="col-5 home-left" >
 
     <div class="pie">
       <div class="back">
@@ -19,14 +18,12 @@
     </div>
   </div>
     <div class="col home-right"> 
-      <h1>Calculate your ROI from choosing Micro Focus</h1>
-  
+      <h1 class="heading">Calculate your ROI from <br> choosing Micro Focus</h1>
+      <nav>
+        <a routerLink="/about" routerLinkActive="active">Our Solutions</a>
+        <a routerLink="/calculator" routerLinkActive="active">Let's Begin</a>
+      </nav>
     </div>
 
 </div>
-
- <nav>
-   <!-- <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
-   <a routerLink="/heroes" routerLinkActive="active">Heroes</a> -->
- </nav>
  <router-outlet></router-outlet>

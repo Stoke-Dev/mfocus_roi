@@ -1,11 +1,25 @@
-.home-left {
-    margin: 250px;
+.home-objects {
+display: flex;
+/* background-color: #E9F4FF; */
+}
 
+.home-left {
+top: 30vh;
 }
 
 .home-right {
-    margin: 250px;
-    
+text-align: left;
+top: 30vh;
+}
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.heading {
+  opacity:0;  /* make things invisible upon start */
+  animation: fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:1s;
+  animation-delay: .5s;
 }
 
 
@@ -24,14 +38,20 @@
 
 
 
+/* Pie animation here */
+.pie {
+  float: right;
+  opacity:0;  /* make things invisible upon start */
+  animation: fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:1s;
 
-
-
+}
 .back {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     position: relative;
-    border-radius: 100px;
+    border-radius: 150px;
     background-color: #B9DCFC;
   }
   
@@ -39,10 +59,10 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    clip: rect(0px, 100px, 100px, 50px);
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    clip: rect(0px, 150px, 150px, 75px);
   }
   
   .part {
@@ -50,10 +70,10 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    clip: rect(0px, 50px, 100px, 0px);
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    clip: rect(0px, 75px, 150px, 0px);
   }
   
   .anim {

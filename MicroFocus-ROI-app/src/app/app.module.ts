@@ -5,19 +5,22 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AlertModule } from 'ngx-bootstrap';
+import { AppComponent } from './app.component';
 
 const appRoutes: Routes = [
-  { path: '',    redirectTo: '/heroes',    pathMatch: 'full'  },
+  { path: '',    redirectTo: '/home',    pathMatch: 'full'  },
+  { path: 'home', component: HomeComponent,    data: { title: 'Heroes List' }  }
 /*   { path: 'crisis-center', component: CrisisListComponent },
   { path: 'hero/:id',      component: HeroDetailComponent },
-  {    path: 'heroes',    component: HeroListComponent,    data: { title: 'Heroes List' }  },
+  ,
     { path: '**', component: PageNotFoundComponent } */
 ];
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    AppComponent
   ],
   imports: [
     AlertModule.forRoot(),
@@ -28,6 +31,6 @@ const appRoutes: Routes = [
     )
   ],
   providers: [],
-  bootstrap: [HomeComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
