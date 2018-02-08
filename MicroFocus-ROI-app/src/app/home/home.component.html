@@ -1,10 +1,8 @@
-<div style="text-align:center">
-  <alert type="success">App loaded. Welcome to {{ title }}</alert>
- </div>
+<html>
 <div class="row home-objects">
   <div class="col-5 home-left" >
 
-    <div class="pie">
+    <div class="pie fade-in">
       <div class="back">
           <div class="mask">
           <div class="part anim">
@@ -18,12 +16,12 @@
     </div>
   </div>
     <div class="col home-right"> 
-      <h1 class="heading">Calculate your ROI from <br> choosing Micro Focus</h1>
+      <h1 class="fade-in heading">Calculate your ROI from <br> choosing Micro Focus</h1>
       <nav>
-        <a routerLink="/about" routerLinkActive="active">Our Solutions</a>
-        <a routerLink="/calculator" routerLinkActive="active">Let's Begin</a>
+        <a class="btn btn-primary fade-in" routerLink="/about" routerLinkActive="active">Our Solutions</a>
+        <a class="btn btn-primary fade-in" routerLink="/calculator" routerLinkActive="active">Let's Begin</a>
       </nav>
     </div>
 
 </div>
- <router-outlet></router-outlet>
+</html>

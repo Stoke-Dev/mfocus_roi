@@ -1,6 +1,5 @@
 .home-objects {
-display: flex;
-/* background-color: #E9F4FF; */
+
 }
 
 .home-left {
@@ -15,37 +14,38 @@ top: 30vh;
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
 .heading {
+
+
+}
+
+.btn-primary {
+
+}
+
+.fade-in {
   opacity:0;  /* make things invisible upon start */
   animation: fadeIn ease-in 1;
   animation-fill-mode:forwards;
-  animation-duration:1s;
-  animation-delay: .5s;
+  animation-duration: .5s;
+
+}
+.fade-in.heading {
+  animation-delay: .2s;
 }
 
+.fade-in.btn-primary {
+  animation-delay: .3s;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.fade-in.pie {
+  animation-delay: .1s;
+}
 
 
 
 /* Pie animation here */
 .pie {
   float: right;
-  opacity:0;  /* make things invisible upon start */
-  animation: fadeIn ease-in 1;
-  animation-fill-mode:forwards;
-  animation-duration:1s;
-
 }
 .back {
     width: 150px;

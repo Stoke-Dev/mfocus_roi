@@ -11,7 +11,9 @@ import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
   { path: '',    redirectTo: '/home',    pathMatch: 'full'  },
-  { path: 'home', component: HomeComponent,    data: { title: 'Heroes List' }  }
+  { path: 'home', component: HomeComponent,    data: { title: 'Heroes List' }  },
+  { path: 'about', component: AboutComponent },
+  { path: 'calculator', component: CalculatorComponent }
 /*   { path: 'crisis-center', component: CrisisListComponent },
   { path: 'hero/:id',      component: HeroDetailComponent },
   ,
