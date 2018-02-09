@@ -5,12 +5,17 @@
 }
 
 .home-left {
-top: 30vh;
+  height: calc(100vh - 56px);
 }
 
 .home-right {
 text-align: left;
-top: 27.5vh;
+height: calc(100vh - 56px);
+}
+
+.main-stuff {
+padding-top: 32vh;
+max-width: 440px;
 }
 
 .animated {
@@ -62,7 +67,9 @@ top: 27.5vh;
 
 /* Pie animation here */
 .pie {
-  float: right;
+ position: absolute;
+ left: calc(-150px - 8px); /* adding a margin distance */
+ padding-top: calc(32vh + 26px);
 }
 .back {
     width: 150px;

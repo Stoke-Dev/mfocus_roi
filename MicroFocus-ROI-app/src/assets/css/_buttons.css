@@ -1,13 +1,26 @@
+/* These can be imported into any CSS file where global elements need to be overwritten. I'll be putting Mirco Focus specific styling in here */
+
 .btn-light {
-    background-color: #F0F8FF ;
-    border-color: black;
+    color: #355ED4;
+    border-color: blue;
+    background-color: white;
+    border-width: thin;
   }
 
-/* .btn-light:hover {
-    color: blue;
-    background-color: blue;
-} */
-
 .btn-light:hover, .btn-light:focus, .btn-light:active {
-    background-color: lightgrey;
-} 
+    background-color: #355ED4;
+    color: white;
+  } 
+
+.btn-primary {
+    background-color: #355ED4; 
+}
+  
+.btn-primary:hover, btn-primary:focus, btn-primary:active {
+    color: #355ED4;
+    background-color: white;
+}
+
+.btn {
+    border-radius: 20px;
+}
