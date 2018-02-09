@@ -62,7 +62,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nhtml {\n    background-color: #FFFFFF;\n}\n\nbody {\n    overflow-x: hidden;\n}\n\np, h1, h2, h3, h4, h5, h6, button, a {\n    font-family: 'Helvetica', 'Arial', sans-serif !important;\n}", ""]);
 
 // exports
 

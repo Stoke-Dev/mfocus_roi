@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/about/about.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  about works!\n</p>\n"
+module.exports = "<p>\n  about page here\n</p>\n"
 
 /***/ }),
 
@@ -86,7 +86,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "/* These can be imported into any CSS file where global elements need to be overwritten. I'll be putting Mirco Focus specific styling in here */\n\n.btn-light {\n    color: #355ED4;\n    border-color: blue;\n    background-color: white;\n    border-width: thin;\n  }\n\n.btn-light:hover, .btn-light:focus, .btn-light:active {\n    background-color: #355ED4;\n    color: white;\n  }\n\n.btn-primary {\n    background-color: #355ED4; \n}\n\n.btn-primary:hover, btn-primary:focus, btn-primary:active {\n    color: #355ED4;\n    background-color: white;\n}\n\n.btn {\n    border-radius: 20px;\n}\n\n.footer {\n    position: relative;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    padding: 3rem;\n    background-color: #192122;\n    text-align: center;\n    color: white;\n  }\n\ninput {\n  border-radius: 20px;\n}\n\n/* a:hover{\n  color: white;\n} */\n\n\n\n", ""]);
 
 // exports
 
@@ -99,7 +99,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n\n"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-light bg-faded\">\n\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\" aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <a class=\"navbar-brand\" href=\"#\" >\n    <img src=\"/assets/MicroFocusLogo.png\" height=\"30\" width=\"auto\" class=\"d-inline-block align-top\" alt=\"\">\n  </a>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\">\n    <ul class=\"navbar-nav mr-auto mt-2 mt-md-0\">\n      <li class=\"nav-item active\">\n        <button class=\"btn btn-light my-2 my-sm-0\" routerLink=\"/about\" routerLinkActive=\"active\">Our Solutions <span class=\"sr-only\">(current)</span></button>\n      </li>\n\n      <li class=\"nav-item active\">\n          <button class=\"btn btn-light my-2 my-sm-0\" style=\"margin-left: 7px;\" routerLink=\"/calculator\" routerLinkActive=\"active\">Let's Begin <span class=\"sr-only\">(current)</span></button>\n      </li>\n    </ul>\n\n    <form class=\"form-inline my-2 my-lg-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button type=\"submit\" class=\"btn btn-light my-2 my-sm-0\" >Search</button>\n    </form>\n\n  </div>\n</nav>\n\n\n<router-outlet></router-outlet> <!-- All routes are loaded in here -->\n\n<div class=\"footer\">Footer in progress</div>"
 
 /***/ }),
 
@@ -163,7 +163,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var appRoutes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */], data: { title: 'Heroes List' } }
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */], data: { title: 'Heroes List' } },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_7__about_about_component__["a" /* AboutComponent */] },
+    { path: 'calculator', component: __WEBPACK_IMPORTED_MODULE_6__calculator_calculator_component__["a" /* CalculatorComponent */] }
     /*   { path: 'crisis-center', component: CrisisListComponent },
       { path: 'hero/:id',      component: HeroDetailComponent },
       ,
@@ -218,7 +220,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/calculator/calculator.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  calculator works!\n</p>\n"
+module.exports = "<p>\n  calculator page here\n</p>\n"
 
 /***/ }),
 
@@ -266,7 +268,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".home-objects {\ndisplay: -webkit-box;\ndisplay: -ms-flexbox;\ndisplay: flex;\n/* background-color: #E9F4FF; */\n}\n\n.home-left {\ntop: 30vh;\n}\n\n.home-right {\ntext-align: left;\ntop: 30vh;\n}\n\n@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n.heading {\n  opacity:0;  /* make things invisible upon start */\n  -webkit-animation: fadeIn ease-in 1;\n          animation: fadeIn ease-in 1;\n  -webkit-animation-fill-mode:forwards;\n          animation-fill-mode:forwards;\n  -webkit-animation-duration:1s;\n          animation-duration:1s;\n  -webkit-animation-delay: .5s;\n          animation-delay: .5s;\n}\n\n/* Pie animation here */\n\n.pie {\n  float: right;\n  opacity:0;  /* make things invisible upon start */\n  -webkit-animation: fadeIn ease-in 1;\n          animation: fadeIn ease-in 1;\n  -webkit-animation-fill-mode:forwards;\n          animation-fill-mode:forwards;\n  -webkit-animation-duration:1s;\n          animation-duration:1s;\n\n}\n\n.back {\n    width: 150px;\n    height: 150px;\n    position: relative;\n    border-radius: 150px;\n    background-color: #B9DCFC;\n  }\n\n.mask {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    width: 150px;\n    height: 150px;\n    border-radius: 150px;\n    clip: rect(0px, 150px, 150px, 75px);\n  }\n\n.part {\n    background-color: #3D90F9;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    width: 150px;\n    height: 150px;\n    border-radius: 150px;\n    clip: rect(0px, 75px, 150px, 0px);\n  }\n\n.anim {\n    -webkit-animation: progress 3s;\n            animation: progress 3s;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n  }\n\n@-webkit-keyframes progress\n  {\n  from {-webkit-transform: rotate(0);transform: rotate(0)}\n  to {-webkit-transform: rotate(135deg);transform: rotate(135deg)}\n  }\n\n@keyframes progress\n  {\n  from {-webkit-transform: rotate(0);transform: rotate(0)}\n  to {-webkit-transform: rotate(135deg);transform: rotate(135deg)}\n  } \n  ", ""]);
+exports.push([module.i, "/* These can be imported into any CSS file where global elements need to be overwritten. I'll be putting Mirco Focus specific styling in here */\n\n.btn-light {\n    color: #355ED4;\n    border-color: blue;\n    background-color: white;\n    border-width: thin;\n  }\n\n.btn-light:hover, .btn-light:focus, .btn-light:active {\n    background-color: #355ED4;\n    color: white;\n  }\n\n.btn-primary {\n    background-color: #355ED4; \n}\n\n.btn-primary:hover, btn-primary:focus, btn-primary:active {\n    color: #355ED4;\n    background-color: white;\n}\n\n.btn {\n    border-radius: 20px;\n}\n\n.home-objects {\n\n}\n\n.home-left {\n  height: calc(100vh - 56px);\n}\n\n.home-right {\ntext-align: left;\nheight: calc(100vh - 56px);\n}\n\n.main-stuff {\npadding-top: 32vh;\nmax-width: 440px;\n}\n\n.animated {\n  animation-duration: 1s;\n  animation-fill-mode: both;\n  -webkit-animation-duration: 1s;\n  -webkit-animation-fill-mode: both;\n}\n\n.animatedFadeInUp {\n  opacity: 0\n}\n\n.fadeInUp {\n  opacity: 0;\n  animation-name: fadeInUp;\n  -webkit-animation-name: fadeInUp;\n}\n\n.fade-in {\n  opacity:0;  /* make things invisible upon start */\n  -webkit-animation: fadeIn ease-in 1;\n          animation: fadeIn ease-in 1;\n  -webkit-animation-fill-mode:forwards;\n          animation-fill-mode:forwards;\n  -webkit-animation-duration: .5s;\n          animation-duration: .5s;\n\n}\n\n.fade-in.btn-primary {\n  -webkit-animation-delay: .6s;\n          animation-delay: .6s;\n}\n\n.fade-in.btn-light {\n  -webkit-animation-delay: .5s;\n          animation-delay: .5s;\n}\n\n.fade-in.info-text {\n  -webkit-animation-delay: .4s;\n          animation-delay: .4s;\n}\n\n.fadeInUp.heading {\n\n}\n\n.fade-in.pie {\n  -webkit-animation-delay: .1s;\n          animation-delay: .1s;\n}\n\n/* Pie animation here */\n\n.pie {\n position: absolute;\n left: calc(-150px - 8px); /* adding a margin distance */\n padding-top: calc(32vh + 26px);\n}\n\n.back {\n    width: 150px;\n    height: 150px;\n    position: relative;\n    border-radius: 150px;\n    background-color: #B9DCFC;\n  }\n\n.mask {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    width: 150px;\n    height: 150px;\n    border-radius: 150px;\n    clip: rect(0px, 150px, 150px, 75px);\n  }\n\n.part {\n    background-color: #3D90F9;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    width: 150px;\n    height: 150px;\n    border-radius: 150px;\n    clip: rect(0px, 75px, 150px, 0px);\n  }\n\n.anim {\n    -webkit-animation: progress 2.5s;\n            animation: progress 2.5s;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n  }\n\n@-webkit-keyframes progress\n  {\n  from {-webkit-transform: rotate(0);transform: rotate(0)}\n  to {-webkit-transform: rotate(135deg);transform: rotate(135deg)}\n  }\n\n@keyframes progress\n  {\n  from {-webkit-transform: rotate(0);transform: rotate(0)}\n  to {-webkit-transform: rotate(135deg);transform: rotate(135deg)}\n  }\n\n@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n@-webkit-keyframes fadeInUp {\n    from {\n        -webkit-transform: translate3d(0,40px,0);\n                transform: translate3d(0,40px,0)\n    }\n\n    to {\n        -webkit-transform: translate3d(0,0,0);\n                transform: translate3d(0,0,0);\n        opacity: 1\n    }\n}\n\n@keyframes fadeInUp {\n    from {\n        -webkit-transform: translate3d(0,40px,0);\n                transform: translate3d(0,40px,0)\n    }\n\n    to {\n        -webkit-transform: translate3d(0,0,0);\n                transform: translate3d(0,0,0);\n        opacity: 1\n    }\n}", ""]);
 
 // exports
 
@@ -279,7 +281,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\n  <alert type=\"success\">App loaded. Welcome to {{ title }}</alert>\n </div>\n<div class=\"row home-objects\">\n  <div class=\"col-5 home-left\" >\n\n    <div class=\"pie\">\n      <div class=\"back\">\n          <div class=\"mask\">\n          <div class=\"part anim\">\n          </div>\n        </div>\n        <div class=hole>\n          </div>\n      </div>\n      \n      \n    </div>\n  </div>\n    <div class=\"col home-right\"> \n      <h1 class=\"heading\">Calculate your ROI from <br> choosing Micro Focus</h1>\n      <nav>\n        <a routerLink=\"/about\" routerLinkActive=\"active\">Our Solutions</a>\n        <a routerLink=\"/calculator\" routerLinkActive=\"active\">Let's Begin</a>\n      </nav>\n    </div>\n\n</div>\n <router-outlet></router-outlet>"
+module.exports = "<html>\n<div class=\"row home-objects\">\n  <div class=\"col-5 home-left\" >\n\n  </div>\n    <div class=\"col home-right\"> \n\n        <div class=\"pie fade-in\">\n            <div class=\"back\">\n                <div class=\"mask\">\n                <div class=\"part anim\">\n                </div>\n              </div>\n              <div class=hole>\n                </div>\n            </div>\n          </div>\n\n      <div class=\"main-stuff\">\n        <h1 class=\"animated animatedFadeInUp fadeInUp heading\">Calculate your ROI from choosing Micro Focus</h1>\n        <p class=\"info-text fade-in\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n          incididunt ut ero labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\n          exercitation ullamco.</p>\n        <nav>\n          <a class=\"btn btn-light fade-in\" routerLink=\"/about\" routerLinkActive=\"active\">Our Solutions</a>\n          <a class=\"btn btn-primary fade-in\" routerLink=\"/calculator\" routerLinkActive=\"active\">Let's Begin</a>\n        </nav>\n      </div>\n    </div>\n\n</div>\n</html>"
 
 /***/ }),
 
