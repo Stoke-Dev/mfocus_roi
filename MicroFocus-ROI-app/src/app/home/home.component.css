@@ -13,16 +13,11 @@ text-align: left;
 top: 27.5vh;
 }
 
-
-
-
-
-
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both;
   -webkit-animation-duration: 1s;
-  -webkit-animation-fill-mode: both
+  -webkit-animation-fill-mode: both;
 }
 
 .animatedFadeInUp {
@@ -99,7 +94,7 @@ top: 27.5vh;
   }
   
   .anim {
-    animation: progress 3s;
+    animation: progress 2.5s;
     animation-fill-mode: forwards;
   }
   
