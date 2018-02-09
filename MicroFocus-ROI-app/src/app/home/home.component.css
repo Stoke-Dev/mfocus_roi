@@ -1,3 +1,5 @@
+@import "../../assets/css/_buttons.css";
+
 .home-objects {
 
 }
@@ -8,18 +10,29 @@ top: 30vh;
 
 .home-right {
 text-align: left;
-top: 30vh;
+top: 27.5vh;
 }
 
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-.heading {
 
 
+
+
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both
 }
 
-.btn-primary {
+.animatedFadeInUp {
+  opacity: 0
+}
 
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
 }
 
 .fade-in {
@@ -29,12 +42,21 @@ top: 30vh;
   animation-duration: .5s;
 
 }
-.fade-in.heading {
-  animation-delay: .2s;
-}
 
 .fade-in.btn-primary {
-  animation-delay: .3s;
+  animation-delay: .6s;
+}
+
+.fade-in.btn-light {
+  animation-delay: .5s;
+}
+
+.fade-in.info-text {
+  animation-delay: .4s;
+}
+
+.fadeInUp.heading {
+
 }
 
 .fade-in.pie {
@@ -86,4 +108,17 @@ top: 30vh;
   from {transform: rotate(0)}
   to {transform: rotate(135deg)}
   } 
+
   
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  
+  @keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}

@@ -1,0 +1,13 @@
+.btn-light {
+    background-color: #F0F8FF ;
+    border-color: black;
+  }
+
+/* .btn-light:hover {
+    color: blue;
+    background-color: blue;
+} */
+
+.btn-light:hover, .btn-light:focus, .btn-light:active {
+    background-color: lightgrey;
+} 
