@@ -1,76 +1,31 @@
 @import "../../assets/css/_buttons.css";
 
 .home-objects {
-
+  justify-content: center;
 }
 
-.home-left {
+.spacing-divs {
   height: calc(100vh - 56px);
-}
-
-.home-right {
-text-align: left;
-height: calc(100vh - 56px);
 }
 
 .main-stuff {
 padding-top: 32vh;
-max-width: 440px;
+height: calc(100vh - 56px);
+
+max-width: 800px;
+display: inline-flex
 }
 
-.animated {
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
+.not-pie {
+  
 }
-
-.animatedFadeInUp {
-  opacity: 0
-}
-
-.fadeInUp {
-  opacity: 0;
-  animation-name: fadeInUp;
-  -webkit-animation-name: fadeInUp;
-}
-
-.fade-in {
-  opacity:0;  /* make things invisible upon start */
-  animation: fadeIn ease-in 1;
-  animation-fill-mode:forwards;
-  animation-duration: .5s;
-
-}
-
-.fade-in.btn-primary {
-  animation-delay: .6s;
-}
-
-.fade-in.btn-light {
-  animation-delay: .5s;
-}
-
-.fade-in.info-text {
-  animation-delay: .4s;
-}
-
-.fadeInUp.heading {
-
-}
-
-.fade-in.pie {
-  animation-delay: .1s;
-}
-
-
 
 /* Pie animation here */
 .pie {
- position: absolute;
- left: calc(-150px - 8px); /* adding a margin distance */
- padding-top: calc(32vh + 26px);
+margin-right: 50px;
+margin-top: 20px;
 }
+
 .back {
     width: 150px;
     height: 150px;
@@ -105,11 +60,13 @@ max-width: 440px;
     animation-fill-mode: forwards;
   }
   
-  @keyframes progress
-  {
-  from {transform: rotate(0)}
-  to {transform: rotate(135deg)}
-  } 
+/* Keyframes */
+
+@keyframes progress
+{
+from {transform: rotate(0)}
+to {transform: rotate(135deg)}
+} 
 
   
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -124,3 +81,14 @@ max-width: 440px;
         opacity: 1
     }
 }
+
+/* Media Queries */
+
+@media (max-width: 835px) {
+  .pie {
+  display: none;
+  }
+  .main-stuff {
+    max-width: 360px;
+  }
+  }

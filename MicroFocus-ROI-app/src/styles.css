@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html {
-    background-color: #FFFFFF;
+    background-color: rgb(221, 248, 255); /* I intentionally added grey/made lighter than the blue in the template, because too much blue is a washout (on my monitor). Hope that's okay. */
 }
 
 body {
@@ -11,3 +11,80 @@ body {
 p, h1, h2, h3, h4, h5, h6, button, a {
     font-family: 'Helvetica', 'Arial', sans-serif !important;
 }
+
+p {
+    font-size: 12px;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+.featured-text {
+    font-size: 16px;
+}
+
+input,
+select,
+button,
+a, link {
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .animatedFadeInUp {
+    opacity: 0
+  }
+  
+  .fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+  }
+  
+  .fade-in {
+    opacity:0;  /* make things invisible upon start */
+    animation: fadeIn ease-in 1;
+    animation-fill-mode:forwards;
+    animation-duration: .5s;
+  
+  }
+
+  .fade-in.btn {
+    animation-delay: .5s;
+  }
+  
+  .fade-in.info-text {
+    animation-delay: .4s;
+  }
+  
+  .fadeInUp.heading {
+  
+  }
+  
+  .fade-in.pie {
+    animation-delay: .1s;
+  }
