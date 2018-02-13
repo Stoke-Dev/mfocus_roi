@@ -8,6 +8,10 @@ import { AlertModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { AboutComponent } from './about/about.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ProductsComponent } from './products/products.component';
+import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 
 const appRoutes: Routes = [
   { path: '',    redirectTo: '/home',    pathMatch: 'full'  },
@@ -26,7 +30,11 @@ const appRoutes: Routes = [
     HomeComponent,
     AppComponent,
     CalculatorComponent,
-    AboutComponent
+    AboutComponent,
+    HeaderComponent,
+    FooterComponent,
+    ProductsComponent,
+    QuestionnaireComponent
   ],
   imports: [
     AlertModule.forRoot(),
