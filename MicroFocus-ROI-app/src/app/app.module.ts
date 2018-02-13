@@ -25,7 +25,6 @@ const appRoutes: Routes = [
   { path: 'hero/:id',      component: HeroDetailComponent },
   { path: '**', component: PageNotFoundComponent } 
   */
-
 ];
 
 
