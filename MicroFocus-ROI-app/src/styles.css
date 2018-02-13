@@ -1,35 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
-
 html {
     background-color: rgb(221, 248, 255); /* I intentionally added grey/made lighter than the blue in the template, because too much blue is a washout (on my monitor). Hope that's okay. */
-    font-family: "Roboto";
 }
 
 body {
     overflow-x: hidden;
 }
 
-p, h1, h2, h3, h4, h5, h6, button, a {
-    font-family: 'Helvetica', 'Arial', sans-serif !important;
+body.mf-app * {
+    font-family: 'Helvetica Neue', 'Roboto', sans-serif;
 }
 
-p {
+body.mf-app p {
     font-size: 12px;
 }
 
-h1 {
-    font-size: 80px;
-}
-
-h2 {
+body.mf-app h1 {
     font-size: 48px;
+    font-weight: 100;
 }
 
-h3 {
+body.mf-app h2 {
     font-size: 30px;
+    font-weight: 200;
 }
 
-h4 {
+body.mf-app h3 {
+    font-size: 25px;
+    font-weight: 200;
+}
+
+body.mf-app h4 {
     font-size: 20px;
 }
 
@@ -44,12 +44,9 @@ a, link {
     font-size: 12px;
 }
 
-
-
-
-
-
-
+input {
+    border-radius: 20px;
+ }
 
 
 .animated {
