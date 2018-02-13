@@ -14,14 +14,18 @@ import { ProductsComponent } from './products/products.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 
 const appRoutes: Routes = [
-  { path: '',    redirectTo: '/home',    pathMatch: 'full'  },
-  { path: 'home', component: HomeComponent,    data: { title: 'Heroes List' }  },
+  { path: '', component: HomeComponent, pathMatch: 'full'},
   { path: 'about', component: AboutComponent },
-  { path: 'calculator', component: CalculatorComponent }
-/*   { path: 'crisis-center', component: CrisisListComponent },
+  { path: 'calculator', component: CalculatorComponent },
+  { path: 'begin', component: QuestionnaireComponent },
+  { path: 'products', component: ProductsComponent },
+
+  /* 
+  { path: 'crisis-center', component: CrisisListComponent },
   { path: 'hero/:id',      component: HeroDetailComponent },
-  ,
-    { path: '**', component: PageNotFoundComponent } */
+  { path: '**', component: PageNotFoundComponent } 
+  */
+
 ];
 
 
