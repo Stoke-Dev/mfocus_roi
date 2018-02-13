@@ -1,5 +1,23 @@
 @import "../assets/css/_buttons.css";
 
+.featured-text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+nav.navbar {
+  background: white;
+}
+
+footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 3rem;
+  background-color: #272A2A;
+}
+
 /* a:hover{
   color: white;
 } */

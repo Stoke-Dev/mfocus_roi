@@ -1,9 +1,6 @@
-html {
-    background-color: rgb(221, 248, 255); /* I intentionally added grey/made lighter than the blue in the template, because too much blue is a washout (on my monitor). Hope that's okay. */
-}
-
-body {
+body.mf-app {
     overflow-x: hidden;
+    background-color: rgb(221, 248, 255); /* I intentionally added grey/made lighter than the blue in the template, because too much blue is a washout (on my monitor). Hope that's okay. */
 }
 
 body.mf-app * {
@@ -16,7 +13,7 @@ body.mf-app p {
 
 body.mf-app h1 {
     font-size: 48px;
-    font-weight: 100;
+    font-weight: 200;
 }
 
 body.mf-app h2 {
@@ -31,10 +28,6 @@ body.mf-app h3 {
 
 body.mf-app h4 {
     font-size: 20px;
-}
-
-.featured-text {
-    font-size: 16px;
 }
 
 input,
