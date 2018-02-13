@@ -21,10 +21,6 @@ max-width: 800px;
 display: inline-flex
 }
 
-.not-pie {
-  
-}
-
 /* Pie animation here */
 .pie {
 margin-right: 50px;
@@ -42,23 +38,23 @@ margin-top: 20px;
   
   .mask {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 150px;
     height: 150px;
     border-radius: 150px;
-    clip: rect(0px, 150px, 150px, 75px);
+    clip: rect(0, 150px, 150px, 75px);
   }
   
   .part {
     background-color: #3D90F9;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 150px;
     height: 150px;
     border-radius: 150px;
-    clip: rect(0px, 75px, 150px, 0px);
+    clip: rect(0, 75px, 150px, 0px);
   }
   
   .anim {
@@ -98,3 +94,9 @@ to {transform: rotate(135deg)}
     max-width: 360px;
   }
   }
+
+
+
+
+
+

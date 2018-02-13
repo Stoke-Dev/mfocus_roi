@@ -1,3 +1,10 @@
+@import "../../assets/css/_buttons.css";
+
+.form1 {
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
 .col-7 {
     height: calc(100vh - 56px);
 }
@@ -8,8 +15,14 @@
     
 }
 
+.left-text {
+    display: inline-flex;
+}
+
 .box {
     display: inline-flex;
+    justify-content: space-between;
+    border-radius: 10px;
     max-height: 100px;
     max-width: 700px;
     border-style: solid;
@@ -17,6 +30,7 @@
     border-color: lightblue;
     padding: 15px 25px 15px 25px;
     margin: 20px 0px 20px 55px;
+    background-color: white;
 }
 
 .box-info {
@@ -26,14 +40,22 @@
 
 }
 
-.checkbox {
-    margin-top: 22px;
-    margin-right: 20px;
+
+
+.right-text {
+
+    right: 90px;
+    /* text-align: right; */
+    margin-top: 18px;
+    float: right;
 }
 
-.side-text {
+.bottom-content {
     position: absolute;
-    right: 90px;
-    text-align: right;
-    margin-top: 18px;
+    width: 100vw;
+    height: 100px;
+    bottom: 0;
 }
+
+
+

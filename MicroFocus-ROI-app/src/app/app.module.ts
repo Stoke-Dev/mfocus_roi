@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
+import { HelperBoxComponent } from './helper-box/helper-box.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -20,10 +21,10 @@ const appRoutes: Routes = [
   { path: 'begin', component: QuestionnaireComponent },
   { path: 'products', component: ProductsComponent },
 
-  /* 
+  /*
   { path: 'crisis-center', component: CrisisListComponent },
   { path: 'hero/:id',      component: HeroDetailComponent },
-  { path: '**', component: PageNotFoundComponent } 
+  { path: '**', component: PageNotFoundComponent }
   */
 ];
 
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     ProductsComponent,
-    QuestionnaireComponent
+    QuestionnaireComponent,
+    HelperBoxComponent
   ],
   imports: [
     AlertModule.forRoot(),
