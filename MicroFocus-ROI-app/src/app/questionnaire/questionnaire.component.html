@@ -1,3 +1,38 @@
-<p>
-  questionnaire works!
-</p>
+<div class="mf-questn container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 style="margin-left: 28%">Tell us a little about your organization</h2>
+      <div class="mf-questn-form">
+
+        <div class="mf-input-row">
+          <label for="num_staff">Number of Staff</label>
+          <input name="num_staff" type="text" placeholder="0">
+        </div>
+        <div class="mf-input-row percentage">
+          <label for="annual_turnover">Annual Turnover (%)</label>
+          <input name="annual_turnover" type="text" placeholder="0.0">
+        </div>
+        <div class="mf-input-row dollar">
+          <label for="avg_wage">Average Hourly Wage</label>
+          <input name="avg_wage" type="text" placeholder="0.00">
+        </div>
+        <div class="mf-input-row dollar">
+          <label for="avg_it">Average IT Hourly Wage</label>
+          <input name="avg_it" type="text" placeholder="0.00">
+        </div>
+        <a class="btn btn-primary mf-cont-btn" routerLink="/calculator">continue</a>
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mf-tooltip">
+        <img src="#" alt="">
+        <div class="mf-desc">
+          <h4>Tooltip Box</h4>
+          <p>Lorem Ipsum and things</p>
+          <a href="#" class="mf-learn-more">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

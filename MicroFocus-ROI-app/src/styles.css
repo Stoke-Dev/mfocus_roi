@@ -7,6 +7,7 @@ body.mf-app {
 
 body.mf-app * {
     font-family: 'Helvetica Neue', 'Roboto', sans-serif;
+    color: #293138;
 }
 
 body.mf-app p {
@@ -19,17 +20,18 @@ body.mf-app h1 {
 }
 
 body.mf-app h2 {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 200;
 }
 
 body.mf-app h3 {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 200;
 }
 
 body.mf-app h4 {
     font-size: 20px;
+    font-weight: 500;
 }
 
 input,
