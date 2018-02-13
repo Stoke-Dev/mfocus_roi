@@ -1,12 +1,8 @@
 @import "../assets/css/_buttons.css";
 
-.featured-text {
-  font-size: 16px;
-  line-height: 24px;
-}
-
 nav.navbar {
   background: white;
+  padding: 19px 50px;
 }
 
 footer {
