@@ -10,7 +10,6 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProductsComponent } from './products/products.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { HelperBoxComponent } from './helper-box/helper-box.component';
 import { FormsModule } from '@angular/forms';
@@ -20,13 +19,6 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'calculator', component: CalculatorComponent },
   { path: 'begin', component: QuestionnaireComponent },
-  { path: 'products', component: ProductsComponent },
-
-  /*
-  { path: 'crisis-center', component: CrisisListComponent },
-  { path: 'hero/:id',      component: HeroDetailComponent },
-  { path: '**', component: PageNotFoundComponent }
-  */
 ];
 
 
@@ -38,7 +30,6 @@ const appRoutes: Routes = [
     AboutComponent,
     HeaderComponent,
     FooterComponent,
-    ProductsComponent,
     QuestionnaireComponent,
     HelperBoxComponent
   ],
