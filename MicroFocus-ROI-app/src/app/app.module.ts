@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
   { path: 'about', component: AboutComponent },
-  { path: 'calculator', component: CalculatorComponent },
+  { path: 'savings', component: CalculatorComponent },
   { path: 'begin', component: QuestionnaireComponent },
 ];
 
