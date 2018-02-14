@@ -1,0 +1,50 @@
+/* Checkboxes */
+
+.checkbox {
+    position: relative;
+    user-select: none;
+    padding-left: 0;
+ }
+
+.checkbox label {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    border: 2px solid #00CFFB;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out; 
+}
+
+.checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox input[type="checkbox"]:focus + label {
+    outline: none;
+}
+
+.checkbox input[type="checkbox"]:checked + label::after {
+    /* Brandyn's magical checkbox */
+    content: "";
+    display: inline-block;
+    width: 8.65px; /*golden ratio*/
+    height: 14px;
+    border: 2px #881FD3 solid;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+    margin-left: 8px;
+}
+
+.checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65; 
+    cursor: default; 
+}
+
+.checkbox.checkbox-inline {
+    margin-top: 0; 
+}
