@@ -1,4 +1,5 @@
 @import "../../assets/css/_buttons.css";
+@import "../../assets/css/_animations.css";
 
 .mf-sub-text {
   font-size: 14px;
@@ -61,28 +62,6 @@ margin-top: 20px;
     animation: progress 2.5s;
     animation-fill-mode: forwards;
   }
-  
-/* Keyframes */
-
-@keyframes progress
-{
-from {transform: rotate(0)}
-to {transform: rotate(135deg)}
-} 
-
-  
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-  
-  @keyframes fadeInUp {
-    from {
-        transform: translate3d(0,40px,0)
-    }
-
-    to {
-        transform: translate3d(0,0,0);
-        opacity: 1
-    }
-}
 
 /* Media Queries */
 
