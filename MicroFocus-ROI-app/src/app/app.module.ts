@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { HelperBoxComponent } from './helper-box/helper-box.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
   imports: [
     AlertModule.forRoot(),
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
