@@ -2,9 +2,11 @@
 @import "../../assets/css/_animations.css";
 
 .mf-questn {
-    padding: 3% 0;
+    padding: 3% 30px;
     position: relative;
 }
+
+
 
 .mf-questn-form {
     text-align: right;
@@ -35,21 +37,21 @@
 .mf-questn-form .mf-input-row.percentage:after {
     content: '%';
     position: absolute;
-    right: 2.6%;
+    right: 14px;
     top: 50%;
-    margin-top: -1.8%;
+    margin-top: -9px;
     color: #BCE0FD;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .mf-questn-form .mf-input-row.dollar:after {
     content: '$';
     position: absolute;
-    right: 14.5%;
+    right: 78px;
     top: 50%;
-    margin-top: -1.8%;
+    margin-top: -9px;
     color: #BCE0FD;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .mf-questn-form .mf-input-row.dollar input[type=text] {
@@ -67,4 +69,10 @@
 
 .mf-questn-form .mf-cont-btn {
     margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+    .mf-title {
+        margin-left: 28%;
+    }
 }

@@ -11,21 +11,20 @@
 }
 
 .spacing-divs {
-  height: calc(100vh - 56px);
+  height: calc(100vh - 80px);
 }
 
 .main-stuff {
-padding-top: 32vh;
-height: calc(100vh - 56px);
-
-max-width: 800px;
-display: inline-flex
+  padding-top: 32vh;
+  height: calc(100vh - 80px);
+  max-width: 800px;
+  display: inline-flex
 }
 
 /* Pie animation here */
 .pie {
-margin-right: 50px;
-margin-top: 20px;
+  margin-right: 50px;
+  margin-top: 20px;
 }
 
 .back {
@@ -67,14 +66,16 @@ margin-top: 20px;
 
 @media (max-width: 835px) {
   .pie {
-  display: none;
+    display: none;
   }
   .main-stuff {
-    max-width: 360px;
+    padding: 30px 45px;
+    height: auto;
   }
+  .btn {
+    margin-bottom: 10px;
   }
-
-
+}
 
 
 

@@ -40,7 +40,7 @@
     text-align: center;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
     .btn {
         width: 100%;
     }
