@@ -3,28 +3,29 @@
 /* Buttons */
 
 .btn-light {
-    color: #355ED4;
-    border-color: blue;
+    color: #007AE7;
     background-color: white;
-    border-width: thin;
+    border-color: transparent;
   }
 
 .btn-light:hover, .btn-light:focus, .btn-light:active {
-    background-color: #355ED4;
+    background-color: #007AE7;
     color: white;
   } 
 
 .btn-primary {
-    background-color: #355ED4; 
+    background-color: #007AE7;
+    color: white;
 }
   
-.btn-primary:hover, btn-primary:focus, btn-primary:active {
-    color: #355ED4;
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: #007AE7;
     background-color: white;
 }
 
-.btn-primary.mf-featured-cta {
+.btn.mf-featured-cta, .btn:focus {
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+    border-color: transparent;
 }
 
 .btn {
@@ -34,9 +35,14 @@
     font-weight: 500;
     letter-spacing: 1px;
     padding: 14px 22px;
-    margin-right: 11px;
+    /* margin-right: 11px; */
     min-width: 140px;
     text-align: center;
-    color: white;
+}
+
+@media (max-width: 750px) {
+    .btn {
+        width: 100%;
+    }
 }
 
