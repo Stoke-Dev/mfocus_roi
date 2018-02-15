@@ -1,33 +1,30 @@
-<div class="container">
+<div class="mf-calc container">
   <div class="row">
-    <div class="form1 col-md-7">
-      <h2 class="animated animatedFadeInUp fadeInUp heading">Explore what Micro Focus can do for you</h2>
-      <p class="info-text fade-in featured-text">Please select which solutions you wish to explore below</p>
-      <div class="form-content">
-
-        <div class="box" *ngFor="let cat of categories">
-          <div class="left-text">
-            <div class="checkbox checkbox-primary">
-              <input id="{{cat.id}}_checkbox" type="checkbox" [(ngModel)]="cat.checked" checked="">
-              <label for="{{cat.id}}_checkbox"></label>
-            </div>
-            <div class="box-info">
-              <div class="mf-title">{{ cat.name }}</div>
-              <p>{{ cat.description }}</p>
-            </div>
-          </div>
-          <div class="right-text mf-savings">Save {{ cat.savings | currency: dollar }} / year</div>
-          <div class="extra-detail" *ngIf="cat.checked">
-            <img src="assets/TempImage.png" width="auto" class="detail-image" alt="">
+    <div class="col-md-6">
+      <h2 class="animated fade-in-up heading">Explore what Micro Focus can do for you</h2>
+      <p class="animated fade-in info-text mf-subtitle">Please review our solutions below</p>
+    </div>
+    <div class="mf-solutions-list col-12">
+      <div class="box row animated fade-in" style="animation-delay: .2s;" *ngFor="let cat of categories">
+        <div class="col-12">
+          <div class="mf-title">
+            {{ cat.name }}
           </div>
         </div>
 
-        <a class="btn btn-primary" routerLink="/begin" routerLinkActive="active">Change Information</a>
-      </div>
-    </div>
+        <div class="mf-solution-desc col-md-4">
+            {{ cat.description }}
+        </div>
 
-    <div class="col-md-5">
-      <app-helper-box></app-helper-box><!-- For now I'll make the tooltip Absolute with this box as the parent. Later we'll have it move on mouse hover -->
+        <div class="mf-charts col-md-8">
+          <img src="assets/TempImage.png" style="max-height: 165px; width:100%;" class="detail-image">
+        </div>
+
+        <div class="mf-solution-cta col-12">
+            <a class="btn btn-light" href="#">Learn More</a> <div class="mf-savings">Save {{ cat.savings | currency: dollar }} / year</div>
+        </div>
+      </div>
+      <a class="btn btn-primary mf-change-btn" routerLink="/begin" routerLinkActive="active">Change Information</a>
     </div>
   </div>
 </div>
