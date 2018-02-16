@@ -6,7 +6,9 @@
     position: relative;
 }
 
-
+.container {
+    min-height: calc(100vh - 80px);
+}
 
 .mf-questn-form {
     text-align: right;
