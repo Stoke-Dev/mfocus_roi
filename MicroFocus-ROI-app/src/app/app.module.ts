@@ -13,6 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { HelperBoxComponent } from './helper-box/helper-box.component';
 import { FormsModule } from '@angular/forms';
+import { MfClientDataService } from './mf-client-data.service';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -42,7 +44,9 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [
+    MfClientDataService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
