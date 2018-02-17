@@ -86,7 +86,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* These can be imported into any CSS file where global elements need to be overwritten. I'll be putting Mirco Focus specific styling in here */\n\n/* Buttons */\n\n.btn-light {\n    color: #007AE7;\n    background-color: white;\n    border-color: transparent;\n  }\n\n.btn-light:hover, .btn-light:focus, .btn-light:active {\n    background-color: #007AE7;\n    color: white;\n  }\n\n.btn-primary {\n    background-color: #007AE7;\n    color: white;\n}\n\n.btn-primary:hover, .btn-primary:focus, .btn-primary:active {\n    color: #007AE7;\n    background-color: white;\n}\n\n.btn.mf-featured-cta, .btn:focus {\n    -webkit-box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n    border-color: transparent;\n}\n\n.btn {\n    border-radius: 99px;\n    text-transform: uppercase;\n    font-size: 11px;\n    font-weight: 500;\n    letter-spacing: 1px;\n    padding: 14px 22px;\n    /* margin-right: 11px; */\n    min-width: 140px;\n    text-align: center;\n}\n\n@media (max-width: 767px) {\n    .btn {\n        width: 100%;\n    }\n}\n\nnav.navbar {\n  background: white;\n  padding: 19px 50px;\n}\n\nfooter {\n  position: relative;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  padding: 3rem;\n  background-color: #272A2A;\n}\n\n", ""]);
+exports.push([module.i, "/* These can be imported into any CSS file where global elements need to be overwritten. I'll be putting Mirco Focus specific styling in here */\n\n/* Buttons */\n\n.btn-light {\n    color: #007AE7;\n    background-color: white;\n    border-color: transparent;\n  }\n\n.btn-light:hover, .btn-light:focus, .btn-light:active {\n    background-color: #007AE7;\n    color: white;\n  }\n\n.btn-primary {\n    background-color: #007AE7;\n    color: white;\n}\n\n.btn-primary:hover, .btn-primary:focus, .btn-primary:active {\n    color: #007AE7;\n    background-color: white;\n}\n\n.btn.mf-featured-cta, .btn:focus {\n    -webkit-box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n    border-color: transparent;\n}\n\n.btn {\n    border-radius: 99px;\n    text-transform: uppercase;\n    font-size: 11px;\n    font-weight: 500;\n    letter-spacing: 1px;\n    padding: 14px 22px;\n    /* margin-right: 11px; */\n    min-width: 140px;\n    text-align: center;\n}\n\n@media (max-width: 767px) {\n    .btn {\n        width: 100%;\n    }\n}\n\nnav.navbar {\n  background: white;\n  padding: 19px 50px;\n}\n\n\n\n", ""]);
 
 // exports
 
@@ -99,7 +99,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-light bg-faded\"><app-header></app-header></nav>\n<div class=\"main\">\n  <router-outlet></router-outlet>  <!-- All routes are loaded in here -->\n</div>\n<footer><app-footer></app-footer><footer> <!-- Footer route here -->"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-light bg-faded\"><app-header></app-header></nav>\n<div class=\"main\">\n  <router-outlet></router-outlet>  <!-- All routes are loaded in here -->\n</div>\n<app-footer></app-footer> <!-- Footer route here -->"
 
 /***/ }),
 
@@ -152,12 +152,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__questionnaire_questionnaire_component__ = __webpack_require__("../../../../../src/app/questionnaire/questionnaire.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__helper_box_helper_box_component__ = __webpack_require__("../../../../../src/app/helper-box/helper-box.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__mf_client_data_service__ = __webpack_require__("../../../../../src/app/mf-client-data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -199,7 +201,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* RouterModule */].forRoot(appRoutes, { enableTracing: true } // <-- debugging purposes only
                 )
             ],
-            providers: [],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_13__mf_client_data_service__["a" /* MfClientDataService */],
+            ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -241,6 +245,7 @@ module.exports = "<div class=\"mf-calc container\">\n  <div class=\"row\">\n    
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalculatorComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mf_client_data_service__ = __webpack_require__("../../../../../src/app/mf-client-data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -251,34 +256,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var CalculatorComponent = /** @class */ (function () {
-    function CalculatorComponent() {
+    function CalculatorComponent(_data) {
+        this._data = _data;
         this.categories = [
             {
-                id: "id_gov",
+                id: 'id_gov',
                 name: "Identity Governance",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci.",
-                savings: 3500,
-                checked: false
+                savings: 99,
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci."
             },
             {
-                id: "ac_mgmt",
+                id: 'ac_mgmt',
                 name: "Access Management",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci.",
-                savings: 3500,
-                checked: false
+                savings: 99,
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci."
             },
             {
-                id: "prv_mgmt",
+                id: 'prv_mgmt',
                 name: "Privilege Management",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci.",
-                savings: 35100,
-                checked: false
+                savings: 99,
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci."
             }
         ];
     }
     CalculatorComponent.prototype.ngOnInit = function () {
+        _a = this._data.computeSavings(), this.categories[0].savings = _a[0], this.categories[1].savings = _a[1], this.categories[2].savings = _a[2];
         this.categories.sort(compareSavings);
+        var _a;
     };
     CalculatorComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -286,7 +292,7 @@ var CalculatorComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/calculator/calculator.component.html"),
             styles: [__webpack_require__("../../../../../src/app/calculator/calculator.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__mf_client_data_service__["a" /* MfClientDataService */]])
     ], CalculatorComponent);
     return CalculatorComponent;
 }());
@@ -310,7 +316,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".footer {\n    text-align: center;\n    color: white;\n}\n\n.footer-text {\n    color: white;\n}", ""]);
+exports.push([module.i, "footer {\n    position: relative;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    padding: 3rem;\n    background-color: #272A2A;\n    text-align: center;\n    color: white;\n}\n\n.footer-text, p {\n    color: rgb(218, 218, 218);\n}\n\na:link, a:active, a:visited {\n    color: #29CEFF; \n}\n\na:hover {\n    color: #29CEFF; \n    text-decoration: underline;\n}\n\ndiv[class^=\"col\"] {\n    text-align: left;\n    margin: 0;\n    padding: 0;\n}\n\nul {\n    padding: 0;\n    list-style-type: none;\n    text-align: left;\n}\n\n.copyright {\n        color: grey;\n}\n\np {\n    margin: 0;\n}\n\n@media (max-width: 992px) {\n    .footer {\n        max-height: none;\n    }\n}\n\n@media (min-width: 992px) {\n    .footer {\n        max-height: 256px;\n    }\n}\n", ""]);
 
 // exports
 
@@ -323,7 +329,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/footer/footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"footer\">\n\n<div class=\"row\">\n\n<div class=\"col-2 footer-text\">Logo and date </div>\n\n<div class=\"col-2 footer-text\">About links</div>\n\n<div class=\"col-2 footer-text\">Social links</div>\n\n<div class=\"col-3 footer-text\">Subscribe to our newletter</div>\n<div class=\"col-3 footer-text\">Contact information</div>\n\n</div>\n\n  <!-- FOOTER -->\n</div>"
+module.exports = "<footer>\n\n<div class=\"container\">\n\n<div class=\"row justify-content-md-center border-bottom border-dark\" >\n\n<div class=\"col-md-2 footer-text\">\n  \n    <ul>\n        <li><i class=\"fas fa-globe\"></i><a href=\"#\">  Language</a></li>\n        <li><i class=\"far fa-comments\"></i><a href=\"#\">  Contact Us</a></li>\n        <li><i class=\"far fa-user\"></i>  <a href=\"#\">  Feedback</a></li>\n    </ul>\n  \n  </div>\n\n<div class=\"col-md-1\"></div>\n\n<div class=\"col-md-2 footer-text\"><p>Legal</p>\n    <ul>\n        <li>  <a href=\"#\">Privacy Policy</a></li>\n        <li>  <a href=\"#\">Terms of Use</a></li>\n    </ul>\n</div>\n\n<div class=\"col-md-2 footer-text\"><p>Compliance</p>\n    <ul>\n        <li>  <a href=\"#\">Accessibility</a></li>\n        <li>  <a href=\"#\">Anti-Slavory Statement</a></li>\n    </ul>\n</div>\n\n<div class=\"col-md-2 footer-text\"><p>Help</p>\n    <ul>\n        <li>  <a href=\"#\">Support</a></li>\n        <li>  <a href=\"#\">How To Buy</a></li>\n    </ul>\n</div>\n\n<div class=\"col-md-2 footer-text\"><p>Company</p>\n    <ul>\n        <li>  <a href=\"#\">Careers</a></li>\n        <li>  <a href=\"#\">Investor Relations</a></li>\n        <li>  <a href=\"#\">Corproate Blog</a></li>\n    </ul>\n</div>\n\n</div>\n\n<!-- Second row here -->\n\n<div class=\"row justify-content-md-center\">\n\n    <div class=\"col-md-1 footer-text\">\n        <a href=\"#\">Community ></a>\n    </div>\n    <div class=\"col-md-2 footer-text\">\n     <a>Follow us on:</a>\n     <a href=\"#\"><i class=\"fab fa-twitter-square fa-lg footer-text\"></i></a>\n     <a href=\"#\"><i class=\"fab fa-facebook-square fa-lg footer-text\"></i></a>\n     <a href=\"#\"><i class=\"fab fa-linkedin fa-lg footer-text\"></i></a>\n     <a href=\"#\"><i class=\"fab fa-youtube-square fa-lg footer-text\"></i></a>\n     <a href=\"#\"><i class=\"fab fa-google-plus-square fa-lg footer-text\"></i></a>\n    </div>\n    <div class=\"col-md-1\"></div>\n    <div class=\"col-md-5 footer-text\">\n     <a href=\"#\">Subscribe</a> <a>to Micro Focus</a>\n    </div>\n    <div class=\"col-md-2 footer-text\">\n        <p class=\"copyright\">© 2018 Micro Focus</p>\n    </div>\n\n    \n\n\n    \n</div>\n</div>\n</footer>"
 
 /***/ }),
 
@@ -541,6 +547,62 @@ var HomeComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/mf-client-data.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MfClientDataService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MfClientDataService = /** @class */ (function () {
+    function MfClientDataService() {
+    }
+    MfClientDataService.prototype.computeSavings = function () {
+        //OUTPUT VARIABLES
+        var idenGov;
+        var accMgmt;
+        var privMgmt;
+        //Remap form input variables
+        var FTES = this.numStaff;
+        var Average_IT_staff_wage = this.avgItWage;
+        /* Static Constants */
+        var FTES_AM_inj = 6;
+        var FTES_AM_fed = 3;
+        var FTES_AM_avg_login_time = 10;
+        var FTES_working_days = 220;
+        var FTES_Wage = 1;
+        var FTES_cust_AM_dev_hrs = 230;
+        var FTES_AM_cust_apps_mtce = .30;
+        var FTES_AB_apps_savings = .95;
+        var FTES_AB_apps_mtce = .20;
+        //Computations
+        var SSO = (FTES_AM_inj + FTES_AM_fed - 1) * FTES_AM_avg_login_time * FTES_working_days * FTES_Wage / 3600 * FTES;
+        var ACCESS_BUS = (FTES_AM_inj + FTES_AM_fed) * FTES_cust_AM_dev_hrs * Average_IT_staff_wage * (FTES_AM_cust_apps_mtce - (1 - FTES_AB_apps_savings) * FTES_AB_apps_mtce);
+        idenGov = 0; //FINISH ME
+        accMgmt = SSO + ACCESS_BUS;
+        privMgmt = 0; //FINISH ME
+        return [idenGov, accMgmt, privMgmt];
+    };
+    MfClientDataService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], MfClientDataService);
+    return MfClientDataService;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/questionnaire/questionnaire.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -549,7 +611,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* These can be imported into any CSS file where global elements need to be overwritten. I'll be putting Mirco Focus specific styling in here */\n\n/* Buttons */\n\n.btn-light {\n    color: #007AE7;\n    background-color: white;\n    border-color: transparent;\n  }\n\n.btn-light:hover, .btn-light:focus, .btn-light:active {\n    background-color: #007AE7;\n    color: white;\n  }\n\n.btn-primary {\n    background-color: #007AE7;\n    color: white;\n}\n\n.btn-primary:hover, .btn-primary:focus, .btn-primary:active {\n    color: #007AE7;\n    background-color: white;\n}\n\n.btn.mf-featured-cta, .btn:focus {\n    -webkit-box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n    border-color: transparent;\n}\n\n.btn {\n    border-radius: 99px;\n    text-transform: uppercase;\n    font-size: 11px;\n    font-weight: 500;\n    letter-spacing: 1px;\n    padding: 14px 22px;\n    /* margin-right: 11px; */\n    min-width: 140px;\n    text-align: center;\n}\n\n@media (max-width: 767px) {\n    .btn {\n        width: 100%;\n    }\n}\n\n.animated {\n    -webkit-animation-duration: 1s;\n            animation-duration: 1s; /* Default Duration */\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n}\n\n.fade-in-up {\n    opacity: 0;\n    -webkit-animation-name: fadeInUp;\n            animation-name: fadeInUp;\n}\n\n.fade-in {\n    opacity: 0;  /* make things invisible upon start */\n    -webkit-animation: fadeIn ease-in 1;\n            animation: fadeIn ease-in 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-animation-duration: .5s;\n            animation-duration: .5s;\n}\n\n.fade-in.btn {\n    -webkit-animation-delay: .5s;\n            animation-delay: .5s;\n}\n\n.fade-in.info-text {\n    -webkit-animation-delay: .4s;\n            animation-delay: .4s;\n}\n\n.fade-in.pie {\n    -webkit-animation-delay: .1s;\n            animation-delay: .1s;\n}\n\n/* Keyframes */\n\n@-webkit-keyframes progress { from {-webkit-transform: rotate(0);transform: rotate(0)} to {-webkit-transform: rotate(135deg);transform: rotate(135deg)} }\n\n@keyframes progress { from {-webkit-transform: rotate(0);transform: rotate(0)} to {-webkit-transform: rotate(135deg);transform: rotate(135deg)} }\n\n@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n@-webkit-keyframes fadeInUp { from { -webkit-transform: translate3d(0, 40px, 0); transform: translate3d(0, 40px, 0) } to {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);opacity: 1;} }\n\n@keyframes fadeInUp { from { -webkit-transform: translate3d(0, 40px, 0); transform: translate3d(0, 40px, 0) } to {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);opacity: 1;} }\n\n.mf-questn {\n    padding: 3% 30px;\n    position: relative;\n}\n\n.mf-questn-form {\n    text-align: right;\n}\n\n.mf-questn-form .mf-input-row {\n    padding: 10px 0;\n    position: relative;\n}\n\n.mf-questn-form .mf-input-row label {\n    margin-right: 30px;\n    font-weight: 500;\n}\n\n.mf-questn-form .mf-input-row input[type=text] {\n    border-radius: 6px;\n    border: 3px solid #00CFFB;\n    padding: 13px 18px 11px;\n    font-size: 14px;\n    -webkit-transition: .3s border-color;\n    transition: .3s border-color;\n    color: #881FD3;\n    position: relative;\n    width: 100px;\n}\n\n.mf-questn-form .mf-input-row.percentage:after {\n    content: '%';\n    position: absolute;\n    right: 14px;\n    top: 50%;\n    margin-top: -9px;\n    color: #BCE0FD;\n    font-size: 13px;\n}\n\n.mf-questn-form .mf-input-row.dollar:after {\n    content: '$';\n    position: absolute;\n    right: 78px;\n    top: 50%;\n    margin-top: -9px;\n    color: #BCE0FD;\n    font-size: 13px;\n}\n\n.mf-questn-form .mf-input-row.dollar input[type=text] {\n    padding-left: 25px;\n}\n\n.mf-questn-form .mf-input-row input[type=text]::-webkit-input-placeholder {\n    color: #BCE0FD;\n}\n\n.mf-questn-form .mf-input-row input[type=text]:-ms-input-placeholder {\n    color: #BCE0FD;\n}\n\n.mf-questn-form .mf-input-row input[type=text]::-ms-input-placeholder {\n    color: #BCE0FD;\n}\n\n.mf-questn-form .mf-input-row input[type=text]::placeholder {\n    color: #BCE0FD;\n}\n\n.mf-questn-form .mf-input-row input[type=text]:focus {\n    outline: none;\n    border-color: #0078EF;\n}\n\n.mf-questn-form .mf-cont-btn {\n    margin-top: 40px;\n}\n\n@media (min-width: 768px) {\n    .mf-title {\n        margin-left: 28%;\n    }\n}", ""]);
+exports.push([module.i, "/* These can be imported into any CSS file where global elements need to be overwritten. I'll be putting Mirco Focus specific styling in here */\n\n/* Buttons */\n\n.btn-light {\n    color: #007AE7;\n    background-color: white;\n    border-color: transparent;\n  }\n\n.btn-light:hover, .btn-light:focus, .btn-light:active {\n    background-color: #007AE7;\n    color: white;\n  }\n\n.btn-primary {\n    background-color: #007AE7;\n    color: white;\n}\n\n.btn-primary:hover, .btn-primary:focus, .btn-primary:active {\n    color: #007AE7;\n    background-color: white;\n}\n\n.btn.mf-featured-cta, .btn:focus {\n    -webkit-box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n    border-color: transparent;\n}\n\n.btn {\n    border-radius: 99px;\n    text-transform: uppercase;\n    font-size: 11px;\n    font-weight: 500;\n    letter-spacing: 1px;\n    padding: 14px 22px;\n    /* margin-right: 11px; */\n    min-width: 140px;\n    text-align: center;\n}\n\n@media (max-width: 767px) {\n    .btn {\n        width: 100%;\n    }\n}\n\n.animated {\n    -webkit-animation-duration: 1s;\n            animation-duration: 1s; /* Default Duration */\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n}\n\n.fade-in-up {\n    opacity: 0;\n    -webkit-animation-name: fadeInUp;\n            animation-name: fadeInUp;\n}\n\n.fade-in {\n    opacity: 0;  /* make things invisible upon start */\n    -webkit-animation: fadeIn ease-in 1;\n            animation: fadeIn ease-in 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-animation-duration: .5s;\n            animation-duration: .5s;\n}\n\n.fade-in.btn {\n    -webkit-animation-delay: .5s;\n            animation-delay: .5s;\n}\n\n.fade-in.info-text {\n    -webkit-animation-delay: .4s;\n            animation-delay: .4s;\n}\n\n.fade-in.pie {\n    -webkit-animation-delay: .1s;\n            animation-delay: .1s;\n}\n\n/* Keyframes */\n\n@-webkit-keyframes progress { from {-webkit-transform: rotate(0);transform: rotate(0)} to {-webkit-transform: rotate(135deg);transform: rotate(135deg)} }\n\n@keyframes progress { from {-webkit-transform: rotate(0);transform: rotate(0)} to {-webkit-transform: rotate(135deg);transform: rotate(135deg)} }\n\n@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n@-webkit-keyframes fadeInUp { from { -webkit-transform: translate3d(0, 40px, 0); transform: translate3d(0, 40px, 0) } to {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);opacity: 1;} }\n\n@keyframes fadeInUp { from { -webkit-transform: translate3d(0, 40px, 0); transform: translate3d(0, 40px, 0) } to {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);opacity: 1;} }\n\n.mf-questn {\n    padding: 3% 30px;\n    position: relative;\n}\n\n.container {\n    min-height: calc(100vh - 80px);\n}\n\n.mf-questn-form {\n    text-align: right;\n}\n\n.mf-questn-form .mf-input-row {\n    padding: 10px 0;\n    position: relative;\n}\n\n.mf-questn-form .mf-input-row label {\n    margin-right: 30px;\n    font-weight: 500;\n}\n\n.mf-questn-form .mf-input-row input[type=text] {\n    border-radius: 6px;\n    border: 3px solid #00CFFB;\n    padding: 13px 18px 11px;\n    font-size: 14px;\n    -webkit-transition: .3s border-color;\n    transition: .3s border-color;\n    color: #881FD3;\n    position: relative;\n    width: 100px;\n}\n\n.mf-questn-form .mf-input-row.percentage:after {\n    content: '%';\n    position: absolute;\n    right: 14px;\n    top: 50%;\n    margin-top: -9px;\n    color: #BCE0FD;\n    font-size: 13px;\n}\n\n.mf-questn-form .mf-input-row.dollar:after {\n    content: '$';\n    position: absolute;\n    right: 78px;\n    top: 50%;\n    margin-top: -9px;\n    color: #BCE0FD;\n    font-size: 13px;\n}\n\n.mf-questn-form .mf-input-row.dollar input[type=text] {\n    padding-left: 25px;\n}\n\n.mf-questn-form .mf-input-row input[type=text]::-webkit-input-placeholder {\n    color: #BCE0FD;\n}\n\n.mf-questn-form .mf-input-row input[type=text]:-ms-input-placeholder {\n    color: #BCE0FD;\n}\n\n.mf-questn-form .mf-input-row input[type=text]::-ms-input-placeholder {\n    color: #BCE0FD;\n}\n\n.mf-questn-form .mf-input-row input[type=text]::placeholder {\n    color: #BCE0FD;\n}\n\n.mf-questn-form .mf-input-row input[type=text]:focus {\n    outline: none;\n    border-color: #0078EF;\n}\n\n.mf-questn-form .mf-cont-btn {\n    margin-top: 40px;\n}\n\n@media (min-width: 768px) {\n    .mf-title {\n        margin-left: 28%;\n    }\n}", ""]);
 
 // exports
 
@@ -562,7 +624,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/questionnaire/questionnaire.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mf-questn container\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h2 class=\"animated fade-in-up mf-title\">Tell us a little about your organization</h2>\n      <div class=\"mf-questn-form\">\n\n        <div class=\"mf-input-row animated fade-in-up\" style=\"animation-delay: .2s;\">\n          <label for=\"num_staff\">Number of Staff</label>\n          <input id=\"num_staff\" name=\"num_staff\" type=\"text\" placeholder=\"0\">\n        </div>\n        <div class=\"mf-input-row percentage animated fade-in-up\" style=\"animation-delay: .3s;\">\n          <label for=\"annual_turnover\">Annual Turnover (%)</label>\n          <input id=\"annual_turnover\" name=\"annual_turnover\" type=\"text\" placeholder=\"0.0\">\n        </div>\n        <div class=\"mf-input-row dollar animated fade-in-up\" style=\"animation-delay: .4s;\">\n          <label for=\"avg_wage\">Average Hourly Wage</label>\n          <input id=\"avg_wage\" name=\"avg_wage\" type=\"text\" placeholder=\"0.00\">\n        </div>\n        <div class=\"mf-input-row dollar animated fade-in-up\" style=\"animation-delay: .5s;\">\n          <label for=\"avg_it\">Average IT Hourly Wage</label>\n          <input id=\"avg_it\" name=\"avg_it\" type=\"text\" placeholder=\"0.00\">\n        </div>\n        <div class=\"mf-input-row animated fade-in-up\" style=\"animation-delay: .6s;\">\n          <label for=\"num_app\">Number of Applications</label>\n          <input id=\"num_app\" name=\"num_app\" type=\"text\" placeholder=\"0\">\n        </div>\n        <a class=\"btn btn-primary mf-cont-btn\" routerLink=\"/savings\">continue</a>\n\n      </div>\n    </div>\n    <div class=\"col-md-5 offset-md-1 animated fade-in\" style=\"animation-delay:.5s;\">\n      <app-helper-box></app-helper-box>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"mf-questn container\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h2 class=\"animated fade-in-up mf-title\">Tell us a little about your organization</h2>\n      <div class=\"mf-questn-form\">\n\n        <div class=\"mf-input-row animated fade-in-up\" style=\"animation-delay: .2s;\">\n          <label for=\"num_staff\">Number of Staff</label>\n          <input [(ngModel)]=\"mfNumStaff\" id=\"num_staff\" name=\"num_staff\" type=\"text\" placeholder=\"0\">\n        </div>\n        <div class=\"mf-input-row percentage animated fade-in-up\" style=\"animation-delay: .3s;\">\n          <label for=\"annual_turnover\">Annual Turnover (%)</label>\n          <input [(ngModel)]=\"mfAnTurnover\" id=\"annual_turnover\" name=\"annual_turnover\" type=\"text\" placeholder=\"0.0\">\n        </div>\n        <div class=\"mf-input-row dollar animated fade-in-up\" style=\"animation-delay: .4s;\">\n          <label for=\"avg_wage\">Average Hourly Wage</label>\n          <input [(ngModel)]=\"mfAvgWage\" id=\"avg_wage\" name=\"avg_wage\" type=\"text\" placeholder=\"0.00\">\n        </div>\n        <div class=\"mf-input-row dollar animated fade-in-up\" style=\"animation-delay: .5s;\">\n          <label for=\"avg_it\">Average IT Hourly Wage</label>\n          <input [(ngModel)]=\"mfAvgItWage\" id=\"avg_it\" name=\"avg_it\" type=\"text\" placeholder=\"0.00\">\n        </div>\n        <div class=\"mf-input-row animated fade-in-up\" style=\"animation-delay: .6s;\">\n          <label for=\"num_app\">Number of Applications</label>\n          <input [(ngModel)]=\"mfNumApps\" id=\"num_app\" name=\"num_app\" type=\"text\" placeholder=\"0\">\n        </div>\n        <a class=\"btn btn-primary mf-cont-btn\" routerLink=\"/savings\">continue</a>\n\n      </div>\n    </div>\n    <div class=\"col-md-5 offset-md-1 animated fade-in\" style=\"animation-delay:.5s;\">\n      <app-helper-box></app-helper-box>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -572,6 +634,7 @@ module.exports = "<div class=\"mf-questn container\">\n  <div class=\"row\">\n  
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuestionnaireComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mf_client_data_service__ = __webpack_require__("../../../../../src/app/mf-client-data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -582,9 +645,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var QuestionnaireComponent = /** @class */ (function () {
-    function QuestionnaireComponent() {
+    function QuestionnaireComponent(_data) {
+        this._data = _data;
     }
+    Object.defineProperty(QuestionnaireComponent.prototype, "mfNumStaff", {
+        get: function () { return this._data.numStaff; },
+        set: function (value) { this._data.numStaff = value; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(QuestionnaireComponent.prototype, "mfAnTurnover", {
+        get: function () { return this._data.anTurnover; },
+        set: function (value) { this._data.anTurnover = value; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(QuestionnaireComponent.prototype, "mfAvgWage", {
+        get: function () { return this._data.avgWage; },
+        set: function (value) { this._data.avgWage = value; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(QuestionnaireComponent.prototype, "mfAvgItWage", {
+        get: function () { return this._data.avgItWage; },
+        set: function (value) { this._data.avgItWage = value; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(QuestionnaireComponent.prototype, "mfNumApps", {
+        get: function () { return this._data.numApps; },
+        set: function (value) { this._data.numApps = value; },
+        enumerable: true,
+        configurable: true
+    });
     QuestionnaireComponent.prototype.ngOnInit = function () {
     };
     QuestionnaireComponent = __decorate([
@@ -593,7 +688,7 @@ var QuestionnaireComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/questionnaire/questionnaire.component.html"),
             styles: [__webpack_require__("../../../../../src/app/questionnaire/questionnaire.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__mf_client_data_service__["a" /* MfClientDataService */]])
     ], QuestionnaireComponent);
     return QuestionnaireComponent;
 }());
