@@ -1,8 +1,8 @@
-<div class="mf-tooltip">
+<div [attr.style]="tooltipStyle" class="mf-tooltip">
   <img src="#" alt="">
   <div class="mf-desc">
-    <h4>Tooltip Box</h4>
-    <p>Lorem Ipsum and things</p>
+    <h4>{{ _data.title }}</h4>
+    <p>{{ _data.description }}</p>
     <a href="#" class="mf-learn-more">Learn More</a>
   </div>
 </div>

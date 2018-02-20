@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AlertModule } from 'ngx-bootstrap';
@@ -14,6 +13,7 @@ import { QuestionnaireComponent } from './questionnaire/questionnaire.component'
 import { HelperBoxComponent } from './helper-box/helper-box.component';
 import { FormsModule } from '@angular/forms';
 import { MfClientDataService } from './mf-client-data.service';
+import { TooltipDataService } from './tooltip-data.service';
 
 
 const appRoutes: Routes = [
@@ -46,6 +46,7 @@ const appRoutes: Routes = [
   ],
   providers: [
     MfClientDataService,
+    TooltipDataService,
   ],
   bootstrap: [AppComponent]
 })
