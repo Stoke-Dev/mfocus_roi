@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TooltipDataService } from '../tooltip-data.service';
 
 @Component({
   selector: 'app-helper-box',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelperBoxComponent implements OnInit {
 
-  constructor() { }
+  tooltipStyle = "margin-top:" + this._data.caretOffset + "px";
+
+  constructor(private _data: TooltipDataService) { }
 
   ngOnInit() {
+
   }
 
 }

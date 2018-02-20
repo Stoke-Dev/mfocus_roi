@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MfClientDataService } from '../mf-client-data.service';
+import { TooltipDataService } from '../tooltip-data.service';
 
 
 @Component({
@@ -22,9 +23,13 @@ export class QuestionnaireComponent implements OnInit {
   set mfNumApps(value: number) {this._data.numApps = value;}
 
 
-  constructor(private _data: MfClientDataService) { }
+  constructor(private _data: MfClientDataService, private _toolTip: TooltipDataService) { }
 
   ngOnInit() {
+    this._toolTip.title = "Default Title";
+    this._toolTip.description = "Description";
+    this._toolTip.showCaret = true;
+    this._toolTip.caretOffset = 20;
   }
 
 }
