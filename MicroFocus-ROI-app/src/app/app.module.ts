@@ -14,7 +14,8 @@ import { QuestionnaireComponent } from './questionnaire/questionnaire.component'
 import { HelperBoxComponent } from './helper-box/helper-box.component';
 import { FormsModule } from '@angular/forms';
 import { MfClientDataService } from './mf-client-data.service';
-
+import { ChartsModule } from 'ng2-charts';
+import { ChartsComponent } from './charts/charts.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -33,12 +34,14 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     QuestionnaireComponent,
-    HelperBoxComponent
+    HelperBoxComponent,
+    ChartsComponent
   ],
   imports: [
     AlertModule.forRoot(),
     BrowserModule,
     FormsModule,
+    ChartsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

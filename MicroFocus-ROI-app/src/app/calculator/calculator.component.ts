@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MfClientDataService } from '../mf-client-data.service';
-
+import { ChartsComponent } from '../charts/charts.component';
 
 @Component({
   selector: 'app-calculator',
