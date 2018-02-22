@@ -30,7 +30,7 @@ export class QuestionnaireComponent implements OnInit {
     this._toolTip.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.";
     this._toolTip.showCaret = false;
     this._toolTip.caretOffset = 90;
-    this._toolTip.learnMoreUrl = new URL("#");
+    this._toolTip.learnMoreUrl = new URL(window.location.href);
     this._toolTip.imageUrl = new URL("http://via.placeholder.com/350x150");
   }
 
@@ -38,39 +38,39 @@ export class QuestionnaireComponent implements OnInit {
     'num_staff': {
       "title": "Number of Full Time Staff",
       "description": "Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-      "learnmore": new URL("#"),
+      "learnmore": new URL(window.location.href),
       "image": new URL("http://via.placeholder.com/350x151")
     },
     'annual_turnover': {
       "title": "Average Annual Employee Turnover",
       "description": "Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-      "learnmore": new URL("#"),
+      "learnmore": new URL(window.location.href),
       "image": new URL("http://via.placeholder.com/350x152")
     },
     'avg_wage': {
       "title": "Average Wage of Full Time Staff",
       "description": "Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-      "learnmore": new URL("#"),
+      "learnmore": new URL(window.location.href),
       "image": new URL("http://via.placeholder.com/350x153")
     },
     'avg_it': {
       "title": "Average Wage of IT Staff",
       "description": "Integer faucibus ipsum nibh pellentesque malesuada eget neque quis vestibulum. Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-      "learnmore": new URL("#"),
+      "learnmore": new URL(window.location.href),
       "image": new URL("http://via.placeholder.com/350x154")
     },
     'num_app': {
       "title": "Number of Applications",
       "description": "Maecenas eu sapien in erat dapibus semper sit amet vel risus. Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. ",
-      "learnmore": new URL("#"),
+      "learnmore": new URL(window.location.href),
       "image": new URL("http://via.placeholder.com/350x155")
     }
   }
 
   focused(event) {
-    let offset = event.srcElement.offsetTop + event.srcElement.offsetParent.offsetTop - 20;
+    let offset = event.target.offsetTop + event.target.offsetParent.offsetTop - 20;
 
-    let currentElementData = this.tooltipData[event.srcElement.id];
+    let currentElementData = this.tooltipData[event.target.id];
     
 
     this._toolTip.caretOffset = offset;
