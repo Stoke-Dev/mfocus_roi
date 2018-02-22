@@ -13,24 +13,25 @@ export class CalculatorComponent implements OnInit {
     {
       id: 'id_gov',
       name: "Identity Governance",
-      savings: 99,
+      savings: {},
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci."
     },
     {
       id: 'ac_mgmt',
       name: "Access Management",
-      savings: 99,
+      savings: {},
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci."
     },
     {
       id: 'prv_mgmt',
       name: "Privilege Management",
-      savings: 99,
+      savings: {},
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci."
     }
   ];
 
   constructor(private _data: MfClientDataService) { }
+
 
   ngOnInit() {
     [this.categories[0].savings, this.categories[1].savings, this.categories[2].savings] = this._data.computeSavings();
