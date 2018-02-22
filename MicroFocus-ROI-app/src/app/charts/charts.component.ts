@@ -12,7 +12,7 @@ export class ChartsComponent {
 
   ngOnInit() {
     this.lineChartData = [
-      { data: this.data, label: 'ROI With Micro Focus' }, /* Additional data can be added, separated by commas. If you do add data, you HAVE to also add to the lineChartsLabels array */
+      { data: this.data, /* label: 'ROI With Micro Focus' */ }, /* Additional data can be added, separated by commas. If you do add data, you HAVE to also add to the lineChartsLabels array */
       // {data: [0, 20000], label: 'Without Micro Focus'},
     ];
   }
@@ -72,7 +72,7 @@ export class ChartsComponent {
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     }
   ];
-  public lineChartLegend: boolean = true;
+  public lineChartLegend: boolean = false;
   public lineChartType: string = 'line';
 
   // events

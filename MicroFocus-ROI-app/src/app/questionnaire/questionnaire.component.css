@@ -32,7 +32,7 @@
     -webkit-transition: .3s border-color;
     -o-transition: .3s border-color;
     transition: .3s border-color;
-    color: #881FD3;
+    color: black;
     position: relative;
     width: 100px;
 }
@@ -43,7 +43,7 @@
     right: 14px;
     top: 50%;
     margin-top: -9px;
-    color: #BCE0FD;
+    color: hsl(207, 100%, 66%);
     font-size: 13px;
 }
 
@@ -53,7 +53,7 @@
     right: 78px;
     top: 50%;
     margin-top: -9px;
-    color: #BCE0FD;
+    color: hsl(207, 100%, 66%);
     font-size: 13px;
 }
 
@@ -62,19 +62,19 @@
 }
 
 .mf-questn-form .mf-input-row input[type=text]::-webkit-input-placeholder {
-    color: #BCE0FD;
+    color: hsl(207, 100%, 66%);
 }
 
 .mf-questn-form .mf-input-row input[type=text]:-ms-input-placeholder {
-    color: #BCE0FD;
+    color: hsl(207, 100%, 66%);
 }
 
 .mf-questn-form .mf-input-row input[type=text]::-ms-input-placeholder {
-    color: #BCE0FD;
+    color: hsl(207, 100%, 66%);
 }
 
 .mf-questn-form .mf-input-row input[type=text]::placeholder {
-    color: #BCE0FD;
+    color: hsl(207, 100%, 66%);
 }
 
 .mf-questn-form .mf-input-row input[type=text]:focus {
