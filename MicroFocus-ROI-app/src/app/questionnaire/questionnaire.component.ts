@@ -67,7 +67,7 @@ export class QuestionnaireComponent implements OnInit {
     }
   }
 
-  focused(event:FocusEvent) {
+  focused(event) {
     let offset = event.srcElement.offsetTop + event.srcElement.offsetParent.offsetTop - 20;
 
     let currentElementData = this.tooltipData[event.srcElement.id];
