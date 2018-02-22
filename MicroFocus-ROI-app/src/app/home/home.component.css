@@ -7,7 +7,9 @@
 }
 
 .home-objects {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .spacing-divs {
@@ -18,6 +20,8 @@
   padding-top: 32vh;
   height: calc(100vh - 80px);
   max-width: 800px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex
 }
 
@@ -33,7 +37,8 @@
     position: relative;
     border-radius: 150px;
     background-color: #B9DCFC;
-    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.16);
+            box-shadow: 0 3px 6px rgba(0,0,0,.16);
   }
   
   .mask {
@@ -58,8 +63,10 @@
   }
   
   .anim {
-    animation: progress 2.5s;
-    animation-fill-mode: forwards;
+    -webkit-animation: progress 2.5s;
+            animation: progress 2.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
   }
 
 /* Media Queries */
@@ -76,7 +83,6 @@
     margin-bottom: 10px;
   }
 }
-
 
 
 

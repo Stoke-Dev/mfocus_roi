@@ -30,6 +30,7 @@
     padding: 13px 18px 11px;
     font-size: 14px;
     -webkit-transition: .3s border-color;
+    -o-transition: .3s border-color;
     transition: .3s border-color;
     color: #881FD3;
     position: relative;
@@ -58,6 +59,18 @@
 
 .mf-questn-form .mf-input-row.dollar input[type=text] {
     padding-left: 25px;
+}
+
+.mf-questn-form .mf-input-row input[type=text]::-webkit-input-placeholder {
+    color: #BCE0FD;
+}
+
+.mf-questn-form .mf-input-row input[type=text]:-ms-input-placeholder {
+    color: #BCE0FD;
+}
+
+.mf-questn-form .mf-input-row input[type=text]::-ms-input-placeholder {
+    color: #BCE0FD;
 }
 
 .mf-questn-form .mf-input-row input[type=text]::placeholder {
