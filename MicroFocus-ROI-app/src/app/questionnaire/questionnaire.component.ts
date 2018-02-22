@@ -30,7 +30,7 @@ export class QuestionnaireComponent implements OnInit {
     this._toolTip.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.";
     this._toolTip.showCaret = false;
     this._toolTip.caretOffset = 90;
-    this._toolTip.learnMoreUrl = new URL("http://www.google.com/");
+    this._toolTip.learnMoreUrl = new URL("#");
     this._toolTip.imageUrl = new URL("http://via.placeholder.com/350x150");
   }
 
