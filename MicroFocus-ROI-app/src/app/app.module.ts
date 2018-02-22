@@ -13,13 +13,10 @@ import { QuestionnaireComponent } from './questionnaire/questionnaire.component'
 import { HelperBoxComponent } from './helper-box/helper-box.component';
 import { FormsModule } from '@angular/forms';
 import { MfClientDataService } from './mf-client-data.service';
-<<<<<<< HEAD
 import { ChartsModule } from 'ng2-charts';
 import { ChartsComponent } from './charts/charts.component';
-=======
 import { TooltipDataService } from './tooltip-data.service';
 
->>>>>>> 395f87b3af45b9c740c48e373c733cdf8481b17c
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
