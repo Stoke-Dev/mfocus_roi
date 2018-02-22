@@ -1,10 +1,10 @@
 .mf-tooltip {
-    /* position: absolute; */
     margin-top: 96px;
     border-radius: 4px;
     box-shadow: 0 3px 10px rgba(0,0,0,.16);
     width: 100%;
     overflow: hidden;
+    transition: margin-top 1s;
 }
 
 .mf-tooltip img{
@@ -19,8 +19,26 @@
     padding: 20px;
 }
 
-/* .helper-box {
-    width: 250px;
-    height: 300px;
-    background: grey;
-} */
+.mf-tooltip .mf-tooltop-caret {
+    height: 0;
+}
+
+.mf-tooltip .mf-tooltop-caret:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 25px transparent solid;
+    border-right-color: #00CFFB;
+    border-left-width: 0;
+    margin-left: 0;
+    margin-top: 20px;
+    transition: margin-left .5s;
+    transition-delay: .5s;
+    z-index: -1;
+}
+
+.mf-tooltip .mf-tooltop-caret.active:before {
+    margin-left: -25px;
+}

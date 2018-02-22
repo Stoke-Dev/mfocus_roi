@@ -1,22 +1,9 @@
-<div [attr.style]="tooltipStyle" class="mf-tooltip">
-  <img src="#" alt="">
+<div [ngStyle]="{'margin-top.px':_data.caretOffset}" class="mf-tooltip">
+  <div [class.active]="_data.showCaret" class="mf-tooltop-caret"></div>
+  <img [attr.src]="_data.imageUrl" alt="">
   <div class="mf-desc">
     <h4>{{ _data.title }}</h4>
     <p>{{ _data.description }}</p>
-    <a href="#" class="mf-learn-more">Learn More</a>
+    <a [attr.href]="_data.learnMoreUrl" target="_blank" class="mf-learn-more">Learn More</a>
   </div>
 </div>
-
-
-
-<!-- <div class="helper-box">
-
-<div class="blue-top"></div>
-<div class="text">
-<h4>The Micro Focus Difference</h4>
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-</div>
-
-<div class="learn-more">Learn More</div>
-
-</div> -->

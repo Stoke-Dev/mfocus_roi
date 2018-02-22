@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Url } from 'url';
 
 @Injectable()
 export class TooltipDataService {
@@ -8,6 +9,9 @@ export class TooltipDataService {
 
   public showCaret: boolean;
   public caretOffset: number;
+
+  public learnMoreUrl: Url;
+  public imageUrl: Url;
 
 
   constructor() { }

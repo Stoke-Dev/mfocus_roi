@@ -11,13 +11,13 @@ import { TooltipDataService } from '../tooltip-data.service';
 export class QuestionnaireComponent implements OnInit {
 
   get mfNumStaff():number {return this._data.numStaff;}
-  get mfAnTurnover():number {return this._data.anTurnover;}
+  get mfAnTurnover():number {return (this._data.anTurnover)?this._data.anTurnover*100:null;}
   get mfAvgWage():number {return this._data.avgWage;}
   get mfAvgItWage():number {return this._data.avgItWage;}
   get mfNumApps():number {return this._data.numApps;}
 
   set mfNumStaff(value: number) {this._data.numStaff = value;}
-  set mfAnTurnover(value: number){this._data.anTurnover = value;}
+  set mfAnTurnover(value: number){this._data.anTurnover = value/100;}
   set mfAvgWage(value: number) {this._data.avgWage = value;}
   set mfAvgItWage(value: number) {this._data.avgItWage = value;}
   set mfNumApps(value: number) {this._data.numApps = value;}
@@ -26,10 +26,61 @@ export class QuestionnaireComponent implements OnInit {
   constructor(private _data: MfClientDataService, private _toolTip: TooltipDataService) { }
 
   ngOnInit() {
-    this._toolTip.title = "Default Title";
-    this._toolTip.description = "Description";
+    this._toolTip.title = "The Micro Focus Advantage";
+    this._toolTip.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.";
+    this._toolTip.showCaret = false;
+    this._toolTip.caretOffset = 90;
+    this._toolTip.learnMoreUrl = new URL("http://www.google.com/");
+    this._toolTip.imageUrl = new URL("http://via.placeholder.com/350x150");
+  }
+
+  tooltipData = {
+    'num_staff': {
+      "title": "Number of Full Time Staff",
+      "description": "Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
+      "learnmore": new URL("#"),
+      "image": new URL("http://via.placeholder.com/350x151")
+    },
+    'annual_turnover': {
+      "title": "Average Annual Employee Turnover",
+      "description": "Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
+      "learnmore": new URL("#"),
+      "image": new URL("http://via.placeholder.com/350x152")
+    },
+    'avg_wage': {
+      "title": "Average Wage of Full Time Staff",
+      "description": "Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
+      "learnmore": new URL("#"),
+      "image": new URL("http://via.placeholder.com/350x153")
+    },
+    'avg_it': {
+      "title": "Average Wage of IT Staff",
+      "description": "Integer faucibus ipsum nibh pellentesque malesuada eget neque quis vestibulum. Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
+      "learnmore": new URL("#"),
+      "image": new URL("http://via.placeholder.com/350x154")
+    },
+    'num_app': {
+      "title": "Number of Applications",
+      "description": "Maecenas eu sapien in erat dapibus semper sit amet vel risus. Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. ",
+      "learnmore": new URL("#"),
+      "image": new URL("http://via.placeholder.com/350x155")
+    }
+  }
+
+  focused(event:FocusEvent) {
+    let offset = event.srcElement.offsetTop + event.srcElement.offsetParent.offsetTop - 20;
+
+    let currentElementData = this.tooltipData[event.srcElement.id];
+    
+
+    this._toolTip.caretOffset = offset;
     this._toolTip.showCaret = true;
-    this._toolTip.caretOffset = 20;
+
+    this._toolTip.title = currentElementData.title;
+    this._toolTip.description = currentElementData.description;
+    this._toolTip.learnMoreUrl = currentElementData.learnmore;
+    this._toolTip.imageUrl = currentElementData.image;
+
   }
 
 }
