@@ -51,6 +51,11 @@
     font-size: 20px;
 }
 
+.mf-charts {
+    position: relative;
+    position: -webkit-sticky; /* Fix for disappearing Safari glitch */
+}
+
 .mf-change-btn {
     float: right;
 }
