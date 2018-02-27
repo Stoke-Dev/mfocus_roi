@@ -508,7 +508,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".mf-tooltip {\n    margin-top: 96px;\n    border-radius: 4px;\n    -webkit-box-shadow: 0 3px 10px rgba(0,0,0,.16);\n            box-shadow: 0 3px 10px rgba(0,0,0,.16);\n    width: 100%;\n    overflow: hidden;\n    -webkit-transition: margin-top 1s;\n    transition: margin-top 1s;\n}\n\n.mf-tooltip img{\n    display: block;\n    width: 100%;\n    height: 150px;\n    background-color: #00CFFB;\n}\n\n.mf-tooltip .mf-desc {\n    background: white;\n    padding: 20px;\n}\n\n.mf-tooltip .mf-tooltop-caret {\n    height: 0;\n}\n\n.mf-tooltip .mf-tooltop-caret:before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    width: 0;\n    height: 0;\n    border: 25px transparent solid;\n    border-right-color: #00CFFB;\n    border-left-width: 0;\n    margin-left: 0;\n    margin-top: 20px;\n    -webkit-transition: margin-left .5s;\n    transition: margin-left .5s;\n    -webkit-transition-delay: .5s;\n            transition-delay: .5s;\n    z-index: -1;\n}\n\n.mf-tooltip .mf-tooltop-caret.active:before {\n    margin-left: -25px;\n}", ""]);
+exports.push([module.i, ".mf-tooltip {\n    margin-top: 96px;\n    border-radius: 4px;\n    -webkit-box-shadow: 0 3px 10px rgba(0,0,0,.16);\n            box-shadow: 0 3px 10px rgba(0,0,0,.16);\n    width: 100%;\n    overflow: hidden;\n    \n}\n\n.mf-tooltip img{\n    display: block;\n    width: 100%;\n    height: 150px;\n    background-color: #00CFFB;\n}\n\n.mf-tooltip .mf-desc {\n    background: white;\n    padding: 20px;\n    min-height: 220px;\n}\n\n.mf-tooltip .mf-tooltop-caret {\n    height: 0;\n}\n\n.mf-tooltip .mf-tooltop-caret .mf-thecaret {\n    content: \"\";\n    display: block;\n    position: absolute;\n    width: 0;\n    height: 0;\n    border: 25px transparent solid;\n    border-right-color: #00CFFB;\n    border-left-width: 0;\n    margin-left: 0;\n    margin-top: 20px;\n    -webkit-transition: margin-left .5s .5s, margin-top 1s;\n    transition: margin-left .5s .5s, margin-top 1s;\n    z-index: -1;\n}\n\n.mf-tooltip .mf-tooltop-caret.active .mf-thecaret {\n    margin-left: -25px;\n}", ""]);
 
 // exports
 
@@ -521,7 +521,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/helper-box/helper-box.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div [ngStyle]=\"{'margin-top.px':_data.caretOffset}\" class=\"mf-tooltip\">\n  <div [class.active]=\"_data.showCaret\" class=\"mf-tooltop-caret\"></div>\n  <img [attr.src]=\"_data.imageUrl\" alt=\"\">\n  <div class=\"mf-desc\">\n    <h4>{{ _data.title }}</h4>\n    <p>{{ _data.description }}</p>\n    <a [attr.href]=\"_data.learnMoreUrl\" target=\"_blank\" class=\"mf-learn-more\">Learn More</a>\n  </div>\n</div>"
+module.exports = "<div class=\"mf-tooltip\">\n  <div [class.active]=\"_data.showCaret\" class=\"mf-tooltop-caret\"><div [ngStyle]=\"{'margin-top.px': _data.caretOffset - 96}\" class=\"mf-thecaret\"></div></div>\n  <img [attr.src]=\"_data.imageUrl\" alt=\"\">\n  <div class=\"mf-desc\">\n    <h4>{{ _data.title }}</h4>\n    <p>{{ _data.description }}</p>\n    <a [attr.href]=\"_data.learnMoreUrl\" target=\"_blank\" class=\"mf-learn-more\">Learn More</a>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -820,7 +820,7 @@ var QuestionnaireComponent = /** @class */ (function () {
         this._toolTip = _toolTip;
         this.tooltipData = {
             'num_staff': {
-                "title": "Number of Full Time Staff",
+                "title": "Number of Full-time Employees (FTEs)",
                 "description": "Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
                 "learnmore": new URL(window.location.href),
                 "image": new URL("http://via.placeholder.com/350x151")
@@ -832,19 +832,19 @@ var QuestionnaireComponent = /** @class */ (function () {
                 "image": new URL("http://via.placeholder.com/350x152")
             },
             'avg_wage': {
-                "title": "Average Wage of Full Time Staff",
+                "title": "Average Hourly Wage of Full-time Employees (FTEs)",
                 "description": "Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
                 "learnmore": new URL(window.location.href),
                 "image": new URL("http://via.placeholder.com/350x153")
             },
             'avg_it': {
-                "title": "Average Wage of IT Staff",
+                "title": "IT Staff Average Hourly Wage",
                 "description": "Integer faucibus ipsum nibh pellentesque malesuada eget neque quis vestibulum. Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
                 "learnmore": new URL(window.location.href),
                 "image": new URL("http://via.placeholder.com/350x154")
             },
             'num_app': {
-                "title": "Number of Applications",
+                "title": "Number of Apps and Systems",
                 "description": "Maecenas eu sapien in erat dapibus semper sit amet vel risus. Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. ",
                 "learnmore": new URL(window.location.href),
                 "image": new URL("http://via.placeholder.com/350x155")
@@ -885,12 +885,12 @@ var QuestionnaireComponent = /** @class */ (function () {
         this._toolTip.title = "The Micro Focus Advantage";
         this._toolTip.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.";
         this._toolTip.showCaret = false;
-        this._toolTip.caretOffset = 90;
+        this._toolTip.caretOffset = 96;
         this._toolTip.learnMoreUrl = new URL(window.location.href);
         this._toolTip.imageUrl = new URL("http://via.placeholder.com/350x150");
     };
     QuestionnaireComponent.prototype.focused = function (event) {
-        var offset = event.target.offsetTop + event.target.offsetParent.offsetTop - 20;
+        var offset = event.target.offsetTop + event.target.offsetParent.offsetTop;
         var currentElementData = this.tooltipData[event.target.id];
         this._toolTip.caretOffset = offset;
         this._toolTip.showCaret = true;
