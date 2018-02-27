@@ -1,5 +1,5 @@
-<div [ngStyle]="{'margin-top.px':_data.caretOffset}" class="mf-tooltip">
-  <div [class.active]="_data.showCaret" class="mf-tooltop-caret"></div>
+<div class="mf-tooltip">
+  <div [class.active]="_data.showCaret" class="mf-tooltop-caret"><div [ngStyle]="{'margin-top.px': _data.caretOffset - 96}" class="mf-thecaret"></div></div>
   <img [attr.src]="_data.imageUrl" alt="">
   <div class="mf-desc">
     <h4>{{ _data.title }}</h4>

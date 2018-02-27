@@ -29,14 +29,14 @@ export class QuestionnaireComponent implements OnInit {
     this._toolTip.title = "The Micro Focus Advantage";
     this._toolTip.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.";
     this._toolTip.showCaret = false;
-    this._toolTip.caretOffset = 90;
+    this._toolTip.caretOffset = 96;
     this._toolTip.learnMoreUrl = new URL(window.location.href);
     this._toolTip.imageUrl = new URL("http://via.placeholder.com/350x150");
   }
 
   tooltipData = {
     'num_staff': {
-      "title": "Number of Full Time Staff",
+      "title": "Number of Full-time Employees (FTEs)",
       "description": "Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
       "learnmore": new URL(window.location.href),
       "image": new URL("http://via.placeholder.com/350x151")
@@ -48,19 +48,19 @@ export class QuestionnaireComponent implements OnInit {
       "image": new URL("http://via.placeholder.com/350x152")
     },
     'avg_wage': {
-      "title": "Average Wage of Full Time Staff",
+      "title": "Average Hourly Wage of Full-time Employees (FTEs)",
       "description": "Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
       "learnmore": new URL(window.location.href),
       "image": new URL("http://via.placeholder.com/350x153")
     },
     'avg_it': {
-      "title": "Average Wage of IT Staff",
+      "title": "IT Staff Average Hourly Wage",
       "description": "Integer faucibus ipsum nibh pellentesque malesuada eget neque quis vestibulum. Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
       "learnmore": new URL(window.location.href),
       "image": new URL("http://via.placeholder.com/350x154")
     },
     'num_app': {
-      "title": "Number of Applications",
+      "title": "Number of Apps and Systems",
       "description": "Maecenas eu sapien in erat dapibus semper sit amet vel risus. Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. ",
       "learnmore": new URL(window.location.href),
       "image": new URL("http://via.placeholder.com/350x155")
@@ -68,7 +68,7 @@ export class QuestionnaireComponent implements OnInit {
   }
 
   focused(event) {
-    let offset = event.target.offsetTop + event.target.offsetParent.offsetTop - 20;
+    let offset = event.target.offsetTop + event.target.offsetParent.offsetTop;
 
     let currentElementData = this.tooltipData[event.target.id];
     
