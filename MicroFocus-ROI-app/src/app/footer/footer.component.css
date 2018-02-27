@@ -50,5 +50,8 @@ p {
     .footer-text, p, a, span, div, li, ul, .footer {
         text-align: center;
     }
+    .subscribe-text {
+        text-align: right !important;
+    }
 
 }
