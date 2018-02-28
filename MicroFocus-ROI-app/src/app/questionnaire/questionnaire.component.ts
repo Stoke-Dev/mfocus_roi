@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MfClientDataService } from '../mf-client-data.service';
 import { TooltipDataService } from '../tooltip-data.service';
-
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-questionnaire',
@@ -23,7 +23,7 @@ export class QuestionnaireComponent implements OnInit {
   set mfNumApps(value: number) {this._data.numApps = value;}
 
 
-  constructor(private _data: MfClientDataService, private _toolTip: TooltipDataService) { }
+  constructor(private _data: MfClientDataService, private _toolTip: TooltipDataService, private router: Router) { }
 
   ngOnInit() {
     this._toolTip.title = "The Micro Focus Advantage";
@@ -32,6 +32,12 @@ export class QuestionnaireComponent implements OnInit {
     this._toolTip.caretOffset = 96;
     this._toolTip.learnMoreUrl = new URL(window.location.href);
     this._toolTip.imageUrl = new URL("http://via.placeholder.com/350x150");
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0);
+  });
   }
 
   tooltipData = {

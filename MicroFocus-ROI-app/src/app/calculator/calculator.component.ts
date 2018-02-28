@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MfClientDataService } from '../mf-client-data.service';
 import { ChartsComponent } from '../charts/charts.component';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-calculator',
@@ -30,13 +31,20 @@ export class CalculatorComponent implements OnInit {
     }
   ];
 
-  constructor(private _data: MfClientDataService) { }
+  constructor(private _data: MfClientDataService, private router: Router) { }
 
 
   ngOnInit() {
     [this.categories[0].savings, this.categories[1].savings, this.categories[2].savings] = this._data.computeSavings();
 
     this.categories.sort(compareSavings);
+
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0);
+    });
   }
 
 }
