@@ -23,12 +23,22 @@ export class ChartsComponent {
   public lineChartData: Array<any>;
   public lineChartLabels: Array<any> = ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'];
   public lineChartOptions: any = {
+    tooltips: {
+      callbacks: {
+          label: function(tooltipItem, data) {
+              return "$" + Number(tooltipItem.yLabel).toFixed(0).replace(/./g, function(c, i, a) {
+                  return i > 0 && c !== "." && (a.length - i) % 3 === 0 ? "," + c : c;
+              });
+          }
+      }
+  }
+
     responsive: true,
     scales: {
       yAxes: [{
         ticks: {
           beginAtZero: true,
-          stepSize: 500000,
+          stepSize: 1000000,
 
           // Return an empty string to draw the tick line but hide the tick label
           // Return `null` or `undefined` to hide the tick line entirely
