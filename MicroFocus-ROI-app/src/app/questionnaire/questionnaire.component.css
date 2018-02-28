@@ -91,3 +91,39 @@
         margin-left: 28%;
     }
 }
+
+
+@media (max-width: 425px ) {
+
+    label {
+      font-size: 12px !important;
+    }
+    .mf-questn-form .mf-input-row input[type=text] {
+        width: 75px;
+        height: 40px;
+        padding: 0 5px 0 7px;
+    }
+    .mf-questn-form .mf-input-row.dollar:after {
+        right: 60px;
+
+    }
+    .mf-questn-form .mf-input-row.dollar input[type=text] {
+        padding-left: 15px;
+    }
+    .mf-questn-form .mf-input-row.percentage input[type=text] {
+        padding-right: 15px;
+    }
+    .mf-questn-form .mf-input-row.percentage:after {
+        right: 8px;
+    }
+    h2 {
+        font-size: 30px !important;
+      }
+    .container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+  }
+  
+  
+  

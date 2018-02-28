@@ -71,18 +71,29 @@
 
 /* Media Queries */
 
-@media (max-width: 835px) {
+@media (max-width: 768px) {
   .pie {
     display: none;
   }
   .main-stuff {
     padding: 30px 45px;
     height: auto;
+    min-height: calc(100vh - 80px - 227px); /* This will work better to keep footer at bottom on iPad sizes */
   }
   .btn {
     margin-bottom: 10px;
   }
 }
 
+@media (max-width: 425px ) {
+
+  .main-stuff {
+    height: calc(100vh - 75px);
+    min-height: auto;
+  }
+  h1 {
+    font-size: 30px !important;
+  }
+}
 
 
