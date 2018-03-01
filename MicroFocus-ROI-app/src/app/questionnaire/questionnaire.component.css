@@ -61,6 +61,10 @@
     padding-left: 25px;
 }
 
+.mf-questn-form .mf-input-row.percentage input[type=text] {
+    padding-right: 25px;
+}
+
 .mf-questn-form .mf-input-row input[type=text]::-webkit-input-placeholder {
     color: hsl(207, 100%, 66%);
 }
