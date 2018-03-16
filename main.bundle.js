@@ -180,7 +180,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/calculator/calculator.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mf-calc container\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h2 class=\"animated fade-in-up heading\">Explore what Micro Focus can do for you</h2>\n      <p class=\"animated fade-in info-text mf-subtitle\">Please review our solutions below</p>\n    </div>\n    <div class=\"mf-solutions-list col-12\">\n      <div class=\"box row animated fade-in\" style=\"animation-delay: .2s;\" *ngFor=\"let cat of categories\">\n        <div class=\"col-12\">\n          <div class=\"mf-title\">\n            {{ cat.name }}\n          </div>\n        </div>\n\n        <div class=\"mf-solution-desc col-md-4\">\n            {{ cat.description }}\n        </div>\n\n        <div class=\"mf-charts col-md-8\">\n          <app-charts [data]=\"cat.savings.yearRoi\"></app-charts>\n        </div>\n\n        <div class=\"mf-solution-cta col-12\">\n            <a class=\"btn btn-light\" href=\"#\">Learn More</a> <div class=\"mf-savings\">Save {{ cat.savings.savings | currency: dollar }} / year</div>\n        </div>\n      </div>\n      <a class=\"btn btn-primary mf-change-btn\" routerLink=\"/begin\" routerLinkActive=\"active\">Change Information</a>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"mf-calc container\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h2 class=\"animated fade-in-up heading\">Explore what Micro Focus can do for you</h2>\n      <p class=\"animated fade-in info-text mf-subtitle\">Please review our solutions below</p>\n\n      <div class=\"animated fade-in\"><a routerLink=\"/begin\" routerLinkActive=\"active\">&#8249; Change Information</a></div>\n    </div>\n    <div class=\"mf-solutions-list col-12\">\n      <div class=\"box row animated fade-in\" style=\"animation-delay: .2s;\" *ngFor=\"let cat of categories\">\n        <div class=\"col-12\">\n          <div class=\"mf-title\">\n            {{ cat.name }}\n          </div>\n        </div>\n\n        <div class=\"mf-solution-desc col-md-4\" [innerHTML]=\"cat.description\">\n            <!-- {{ cat.description }} -->\n        </div>\n\n        <div class=\"mf-charts col-md-8\">\n          <app-charts [data]=\"cat.savings.yearRoi\"></app-charts>\n        </div>\n\n        <div class=\"mf-solution-cta col-12\">\n            <a class=\"btn btn-light\" href=\"#\">Learn More</a> <div class=\"mf-savings\">Save {{ cat.savings.savings | currency: dollar }} / year</div>\n        </div>\n      </div>\n      <a class=\"btn btn-primary mf-change-btn\" href=\"#\">Contact Me</a>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -211,9 +211,9 @@ var CalculatorComponent = /** @class */ (function () {
         this.categories = [
             {
                 id: 'id_gov',
-                name: "Identity Governance",
+                name: "Identity Management",
                 savings: {},
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci."
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci.<br><a href='#'>Pricing Guide</a>"
             },
             {
                 id: 'ac_mgmt',
@@ -321,8 +321,8 @@ var ChartsComponent = /** @class */ (function () {
             scales: {
                 yAxes: [{
                         ticks: {
+                            autoSkip: true,
                             beginAtZero: true,
-                            stepSize: 1000000,
                             // Return an empty string to draw the tick line but hide the tick label
                             // Return `null` or `undefined` to hide the tick line entirely
                             userCallback: function (value, index, values) {
@@ -810,7 +810,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* These can be imported into any CSS file where global elements need to be overwritten. I'll be putting Mirco Focus specific styling in here */\n\n/* Buttons */\n\n.btn-light {\n    color: #007AE7;\n    background-color: white;\n    border-color: transparent;\n  }\n\n.btn-light:hover, .btn-light:focus, .btn-light:active {\n    background-color: #007AE7;\n    color: white;\n  }\n\n.btn-primary {\n    background-color: #007AE7;\n    color: white;\n}\n\n.btn-primary:hover, .btn-primary:focus, .btn-primary:active {\n    color: #007AE7;\n    background-color: white;\n}\n\n.btn.mf-featured-cta, .btn:focus {\n    -webkit-box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n    border-color: transparent;\n}\n\n.btn {\n    border-radius: 99px;\n    text-transform: uppercase;\n    font-size: 11px;\n    font-weight: 500;\n    letter-spacing: 1px;\n    padding: 14px 22px;\n    /* margin-right: 11px; */\n    min-width: 140px;\n    text-align: center;\n}\n\n@media (max-width: 767px) {\n    .btn {\n        width: 100%;\n    }\n}\n\n.animated {\n    -webkit-animation-duration: 1s;\n            animation-duration: 1s; /* Default Duration */\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n\n.fade-in-up {\n    opacity: 0;\n    -webkit-animation-name: fadeInUp;\n            animation-name: fadeInUp;\n}\n\n.fade-in {\n    opacity: 0;  /* make things invisible upon start */\n    -webkit-animation: fadeIn ease-in 1;\n            animation: fadeIn ease-in 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-animation-duration: .5s;\n            animation-duration: .5s;\n}\n\n.fade-in.btn {\n    -webkit-animation-delay: .5s;\n            animation-delay: .5s;\n}\n\n.fade-in.info-text {\n    -webkit-animation-delay: .4s;\n            animation-delay: .4s;\n}\n\n.fade-in.pie {\n    -webkit-animation-delay: .1s;\n            animation-delay: .1s;\n}\n\n/* Keyframes */\n\n@-webkit-keyframes progress { from {-webkit-transform: rotate(0);transform: rotate(0)} to {-webkit-transform: rotate(135deg);transform: rotate(135deg)} }\n\n@keyframes progress { from {-webkit-transform: rotate(0);transform: rotate(0)} to {-webkit-transform: rotate(135deg);transform: rotate(135deg)} }\n\n@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n@-webkit-keyframes fadeInUp { from { -webkit-transform: translate3d(0, 40px, 0); transform: translate3d(0, 40px, 0) } to {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);opacity: 1;} }\n\n@keyframes fadeInUp { from { -webkit-transform: translate3d(0, 40px, 0); transform: translate3d(0, 40px, 0) } to {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);opacity: 1;} }\n\n.mf-questn {\n    padding: 3% 30px;\n    position: relative;\n}\n\n.container {\n    min-height: calc(100vh - 80px);\n}\n\n.mf-questn-form {\n    text-align: right;\n}\n\n.mf-questn-form .mf-input-row {\n    padding: 10px 0;\n    position: relative;\n}\n\n.mf-questn-form .mf-input-row label {\n    margin-right: 30px;\n    font-weight: 500;\n}\n\n.mf-questn-form .mf-input-row input[type=text] {\n    border-radius: 6px;\n    border: 3px solid #00CFFB;\n    padding: 13px 18px 11px;\n    font-size: 14px;\n    -webkit-transition: .3s border-color;\n    transition: .3s border-color;\n    color: black;\n    position: relative;\n    width: 100px;\n}\n\n.mf-questn-form .mf-input-row.percentage:after {\n    content: '%';\n    position: absolute;\n    right: 14px;\n    top: 50%;\n    margin-top: -9px;\n    color: hsl(207, 100%, 66%);\n    font-size: 13px;\n}\n\n.mf-questn-form .mf-input-row.dollar:after {\n    content: '$';\n    position: absolute;\n    right: 78px;\n    top: 50%;\n    margin-top: -9px;\n    color: hsl(207, 100%, 66%);\n    font-size: 13px;\n}\n\n.mf-questn-form .mf-input-row.dollar input[type=text] {\n    padding-left: 25px;\n}\n\n.mf-questn-form .mf-input-row input[type=text]::-webkit-input-placeholder {\n    color: hsl(207, 100%, 66%);\n}\n\n.mf-questn-form .mf-input-row input[type=text]:-ms-input-placeholder {\n    color: hsl(207, 100%, 66%);\n}\n\n.mf-questn-form .mf-input-row input[type=text]::-ms-input-placeholder {\n    color: hsl(207, 100%, 66%);\n}\n\n.mf-questn-form .mf-input-row input[type=text]::placeholder {\n    color: hsl(207, 100%, 66%);\n}\n\n.mf-questn-form .mf-input-row input[type=text]:focus {\n    outline: none;\n    border-color: #0078EF;\n}\n\n.mf-questn-form .mf-cont-btn {\n    margin-top: 40px;\n}\n\n@media (min-width: 992px) {\n    .mf-title {\n        margin-left: 28%;\n    }\n}\n\n@media (max-width: 425px ) {\n\n    label {\n      font-size: 12px !important;\n    }\n    .mf-questn-form .mf-input-row input[type=text] {\n        width: 75px;\n        height: 40px;\n        padding: 0 5px 0 7px;\n    }\n    .mf-questn-form .mf-input-row.dollar:after {\n        right: 60px;\n\n    }\n    .mf-questn-form .mf-input-row.dollar input[type=text] {\n        padding-left: 15px;\n    }\n    .mf-questn-form .mf-input-row.percentage input[type=text] {\n        padding-right: 15px;\n    }\n    .mf-questn-form .mf-input-row.percentage:after {\n        right: 8px;\n    }\n    h2 {\n        font-size: 30px !important;\n      }\n    .container {\n        margin-left: 0;\n        margin-right: 0;\n    }\n  }\n  \n  \n  ", ""]);
+exports.push([module.i, "/* These can be imported into any CSS file where global elements need to be overwritten. I'll be putting Mirco Focus specific styling in here */\n\n/* Buttons */\n\n.btn-light {\n    color: #007AE7;\n    background-color: white;\n    border-color: transparent;\n  }\n\n.btn-light:hover, .btn-light:focus, .btn-light:active {\n    background-color: #007AE7;\n    color: white;\n  }\n\n.btn-primary {\n    background-color: #007AE7;\n    color: white;\n}\n\n.btn-primary:hover, .btn-primary:focus, .btn-primary:active {\n    color: #007AE7;\n    background-color: white;\n}\n\n.btn.mf-featured-cta, .btn:focus {\n    -webkit-box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);\n    border-color: transparent;\n}\n\n.btn {\n    border-radius: 99px;\n    text-transform: uppercase;\n    font-size: 11px;\n    font-weight: 500;\n    letter-spacing: 1px;\n    padding: 14px 22px;\n    /* margin-right: 11px; */\n    min-width: 140px;\n    text-align: center;\n}\n\n@media (max-width: 767px) {\n    .btn {\n        width: 100%;\n    }\n}\n\n.animated {\n    -webkit-animation-duration: 1s;\n            animation-duration: 1s; /* Default Duration */\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n\n.fade-in-up {\n    opacity: 0;\n    -webkit-animation-name: fadeInUp;\n            animation-name: fadeInUp;\n}\n\n.fade-in {\n    opacity: 0;  /* make things invisible upon start */\n    -webkit-animation: fadeIn ease-in 1;\n            animation: fadeIn ease-in 1;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    -webkit-animation-duration: .5s;\n            animation-duration: .5s;\n}\n\n.fade-in.btn {\n    -webkit-animation-delay: .5s;\n            animation-delay: .5s;\n}\n\n.fade-in.info-text {\n    -webkit-animation-delay: .4s;\n            animation-delay: .4s;\n}\n\n.fade-in.pie {\n    -webkit-animation-delay: .1s;\n            animation-delay: .1s;\n}\n\n/* Keyframes */\n\n@-webkit-keyframes progress { from {-webkit-transform: rotate(0);transform: rotate(0)} to {-webkit-transform: rotate(135deg);transform: rotate(135deg)} }\n\n@keyframes progress { from {-webkit-transform: rotate(0);transform: rotate(0)} to {-webkit-transform: rotate(135deg);transform: rotate(135deg)} }\n\n@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }\n\n@-webkit-keyframes fadeInUp { from { -webkit-transform: translate3d(0, 40px, 0); transform: translate3d(0, 40px, 0) } to {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);opacity: 1;} }\n\n@keyframes fadeInUp { from { -webkit-transform: translate3d(0, 40px, 0); transform: translate3d(0, 40px, 0) } to {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);opacity: 1;} }\n\n.mf-questn {\n    padding: 3% 30px;\n    position: relative;\n}\n\n.container {\n    min-height: calc(100vh - 80px);\n}\n\n.mf-questn-form {\n    text-align: right;\n}\n\n.mf-questn-form .mf-input-row {\n    padding: 10px 0;\n    position: relative;\n}\n\n.mf-questn-form .mf-input-row label {\n    margin-right: 30px;\n    font-weight: 500;\n}\n\n.mf-questn-form .mf-input-row input[type=text] {\n    border-radius: 6px;\n    border: 3px solid #00CFFB;\n    padding: 13px 18px 11px;\n    font-size: 14px;\n    -webkit-transition: .3s border-color;\n    transition: .3s border-color;\n    color: black;\n    position: relative;\n    width: 100px;\n}\n\n.mf-questn-form .mf-input-row.percentage:after {\n    content: '%';\n    position: absolute;\n    right: 14px;\n    top: 50%;\n    margin-top: -9px;\n    color: hsl(207, 100%, 66%);\n    font-size: 13px;\n}\n\n.mf-questn-form .mf-input-row.dollar:after {\n    content: '$';\n    position: absolute;\n    right: 78px;\n    top: 50%;\n    margin-top: -9px;\n    color: hsl(207, 100%, 66%);\n    font-size: 13px;\n}\n\n.mf-questn-form .mf-input-row.dollar input[type=text] {\n    padding-left: 25px;\n}\n\n.mf-questn-form .mf-input-row.percentage input[type=text] {\n    padding-right: 25px;\n}\n\n.mf-questn-form .mf-input-row input[type=text]::-webkit-input-placeholder {\n    color: hsl(207, 100%, 66%);\n}\n\n.mf-questn-form .mf-input-row input[type=text]:-ms-input-placeholder {\n    color: hsl(207, 100%, 66%);\n}\n\n.mf-questn-form .mf-input-row input[type=text]::-ms-input-placeholder {\n    color: hsl(207, 100%, 66%);\n}\n\n.mf-questn-form .mf-input-row input[type=text]::placeholder {\n    color: hsl(207, 100%, 66%);\n}\n\n.mf-questn-form .mf-input-row input[type=text]:focus {\n    outline: none;\n    border-color: #0078EF;\n}\n\n.mf-questn-form .mf-cont-btn {\n    margin-top: 40px;\n}\n\n@media (min-width: 992px) {\n    .mf-title {\n        margin-left: 28%;\n    }\n}\n\n@media (max-width: 425px ) {\n\n    label {\n      font-size: 12px !important;\n    }\n    .mf-questn-form .mf-input-row input[type=text] {\n        width: 75px;\n        height: 40px;\n        padding: 0 5px 0 7px;\n    }\n    .mf-questn-form .mf-input-row.dollar:after {\n        right: 60px;\n\n    }\n    .mf-questn-form .mf-input-row.dollar input[type=text] {\n        padding-left: 15px;\n    }\n    .mf-questn-form .mf-input-row.percentage input[type=text] {\n        padding-right: 15px;\n    }\n    .mf-questn-form .mf-input-row.percentage:after {\n        right: 8px;\n    }\n    h2 {\n        font-size: 30px !important;\n      }\n    .container {\n        margin-left: 0;\n        margin-right: 0;\n    }\n  }\n  \n  \n  ", ""]);
 
 // exports
 
@@ -836,6 +836,7 @@ module.exports = "<div class=\"mf-questn container\">\n  <div class=\"row\">\n  
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mf_client_data_service__ = __webpack_require__("../../../../../src/app/mf-client-data.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_data_service__ = __webpack_require__("../../../../../src/app/tooltip-data.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -849,41 +850,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var QuestionnaireComponent = /** @class */ (function () {
-    function QuestionnaireComponent(_data, _toolTip, router) {
+    function QuestionnaireComponent(_data, _toolTip, router, location) {
         this._data = _data;
         this._toolTip = _toolTip;
         this.router = router;
+        this.location = location;
         this.tooltipData = {
             'num_staff': {
                 "title": "Number of Full-time Employees (FTEs)",
                 "description": "Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
                 "learnmore": new URL(window.location.href),
-                "image": new URL("http://via.placeholder.com/350x151")
+                "image": this.location.prepareExternalUrl("assets/helper-box-images/image4.jpg")
             },
             'annual_turnover': {
                 "title": "Average Annual Employee Turnover",
                 "description": "Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
                 "learnmore": new URL(window.location.href),
-                "image": new URL("http://via.placeholder.com/350x152")
+                "image": this.location.prepareExternalUrl("assets/helper-box-images/image3.jpg")
             },
             'avg_wage': {
                 "title": "Average Hourly Wage of Full-time Employees (FTEs)",
                 "description": "Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
                 "learnmore": new URL(window.location.href),
-                "image": new URL("http://via.placeholder.com/350x153")
+                "image": this.location.prepareExternalUrl("assets/helper-box-images/image2.jpg")
             },
             'avg_it': {
                 "title": "IT Staff Average Hourly Wage",
                 "description": "Integer faucibus ipsum nibh pellentesque malesuada eget neque quis vestibulum. Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
                 "learnmore": new URL(window.location.href),
-                "image": new URL("http://via.placeholder.com/350x154")
+                "image": this.location.prepareExternalUrl("assets/helper-box-images/image1.jpg")
             },
             'num_app': {
                 "title": "Number of Apps and Systems",
                 "description": "Maecenas eu sapien in erat dapibus semper sit amet vel risus. Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. ",
                 "learnmore": new URL(window.location.href),
-                "image": new URL("http://via.placeholder.com/350x155")
+                "image": this.location.prepareExternalUrl("assets/helper-box-images/image5.jpg")
             }
         };
     }
@@ -923,7 +926,7 @@ var QuestionnaireComponent = /** @class */ (function () {
         this._toolTip.showCaret = false;
         this._toolTip.caretOffset = 96;
         this._toolTip.learnMoreUrl = new URL(window.location.href);
-        this._toolTip.imageUrl = new URL("http://via.placeholder.com/350x150");
+        this._toolTip.imageUrl = this.location.prepareExternalUrl("assets/helper-box-images/image1.jpg");
         this.router.events.subscribe(function (evt) {
             if (!(evt instanceof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* NavigationEnd */])) {
                 return;
@@ -947,7 +950,7 @@ var QuestionnaireComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/questionnaire/questionnaire.component.html"),
             styles: [__webpack_require__("../../../../../src/app/questionnaire/questionnaire.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__mf_client_data_service__["a" /* MfClientDataService */], __WEBPACK_IMPORTED_MODULE_2__tooltip_data_service__["a" /* TooltipDataService */], __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__mf_client_data_service__["a" /* MfClientDataService */], __WEBPACK_IMPORTED_MODULE_2__tooltip_data_service__["a" /* TooltipDataService */], __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["f" /* Location */]])
     ], QuestionnaireComponent);
     return QuestionnaireComponent;
 }());
