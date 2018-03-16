@@ -180,7 +180,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/calculator/calculator.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mf-calc container\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h2 class=\"animated fade-in-up heading\">Explore what Micro Focus can do for you</h2>\n      <p class=\"animated fade-in info-text mf-subtitle\">Please review our solutions below</p>\n\n      <div class=\"animated fade-in\"><a routerLink=\"/begin\" routerLinkActive=\"active\">&#8249; Change Information</a></div>\n    </div>\n    <div class=\"mf-solutions-list col-12\">\n      <div class=\"box row animated fade-in\" style=\"animation-delay: .2s;\" *ngFor=\"let cat of categories\">\n        <div class=\"col-12\">\n          <div class=\"mf-title\">\n            {{ cat.name }}\n          </div>\n        </div>\n\n        <div class=\"mf-solution-desc col-md-4\" [innerHTML]=\"cat.description\">\n            <!-- {{ cat.description }} -->\n        </div>\n\n        <div class=\"mf-charts col-md-8\">\n          <app-charts [data]=\"cat.savings.yearRoi\"></app-charts>\n        </div>\n\n        <div class=\"mf-solution-cta col-12\">\n            <a class=\"btn btn-light\" href=\"#\">Learn More</a> <div class=\"mf-savings\">Save {{ cat.savings.savings | currency: dollar }} / year</div>\n        </div>\n      </div>\n      <a class=\"btn btn-primary mf-change-btn\" href=\"#\">Contact Me</a>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"mf-calc container\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h2 class=\"animated fade-in-up heading\">Explore what Micro Focus can do for you</h2>\n      <p class=\"animated fade-in info-text mf-subtitle\">Please review our solutions below</p>\n\n      <div class=\"animated fade-in\" style=\"animation-delay:.8s\"><a routerLink=\"/begin\" routerLinkActive=\"active\">&#8249; Change Information</a></div>\n    </div>\n    <div class=\"mf-solutions-list col-12\">\n      <div class=\"box row animated fade-in\" style=\"animation-delay: .2s;\" *ngFor=\"let cat of categories\">\n        <div class=\"col-12\">\n          <div class=\"mf-title\">\n            {{ cat.name }}\n          </div>\n        </div>\n\n        <div class=\"mf-solution-desc col-md-4\" [innerHTML]=\"cat.description\">\n            <!-- {{ cat.description }} -->\n        </div>\n\n        <div class=\"mf-charts col-md-8\">\n          <app-charts [data]=\"cat.savings.yearRoi\"></app-charts>\n        </div>\n\n        <div class=\"mf-solution-cta col-12\">\n            <a class=\"btn btn-light\" href=\"#\">Learn More</a> <div class=\"mf-savings\">Save {{ cat.savings.savings | currency: dollar }} in 5 years</div>\n        </div>\n      </div>\n      <a class=\"btn btn-primary mf-change-btn\" href=\"#\">Contact Me</a>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -782,13 +782,15 @@ var MfClientDataService = /** @class */ (function () {
         var year4 = year3 + idenGov.savings - (0 + ID_MGMT_COST_MFR + 0);
         var year5 = year4 + idenGov.savings - (0 + ID_MGMT_COST_MFR + 0);
         idenGov.yearRoi = [year1, year2, year3, year4, year5];
-        //IDMGMT ROI
+        idenGov.savings = year5;
+        //ACCESSMGNT ROI
         year1 = accMgmt.savings - (ACC_MGMT_COST_LFR + ACC_MGMT_COST_MFR + ACC_MGMT_COST_CFR);
         year2 = year1 + accMgmt.savings - (0 + ACC_MGMT_COST_MFR + 0);
         year3 = year2 + accMgmt.savings - (0 + ACC_MGMT_COST_MFR + 0);
         year4 = year3 + accMgmt.savings - (0 + ACC_MGMT_COST_MFR + 0);
         year5 = year4 + accMgmt.savings - (0 + ACC_MGMT_COST_MFR + 0);
         accMgmt.yearRoi = [year1, year2, year3, year4, year5];
+        accMgmt.savings = year5;
         return [idenGov, accMgmt, privMgmt];
     };
     MfClientDataService = __decorate([
