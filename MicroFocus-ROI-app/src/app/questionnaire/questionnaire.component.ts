@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MfClientDataService } from '../mf-client-data.service';
 import { TooltipDataService } from '../tooltip-data.service';
 import { Router, NavigationEnd } from '@angular/router';
+import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'app-questionnaire',
@@ -23,7 +24,7 @@ export class QuestionnaireComponent implements OnInit {
   set mfNumApps(value: number) {this._data.numApps = value;}
 
 
-  constructor(private _data: MfClientDataService, private _toolTip: TooltipDataService, private router: Router) { }
+  constructor(private _data: MfClientDataService, private _toolTip: TooltipDataService, private router: Router, private location: Location) { }
 
   ngOnInit() {
     this._toolTip.title = "The Micro Focus Advantage";
@@ -31,7 +32,7 @@ export class QuestionnaireComponent implements OnInit {
     this._toolTip.showCaret = false;
     this._toolTip.caretOffset = 96;
     this._toolTip.learnMoreUrl = new URL(window.location.href);
-    this._toolTip.imageUrl = new URL("http://via.placeholder.com/350x150");
+    this._toolTip.imageUrl = this.location.prepareExternalUrl("assets/helper-box-images/image1.jpg");
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
           return;
@@ -40,36 +41,38 @@ export class QuestionnaireComponent implements OnInit {
   });
   }
 
+  
+
   tooltipData = {
     'num_staff': {
       "title": "Number of Full-time Employees (FTEs)",
       "description": "Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
       "learnmore": new URL(window.location.href),
-      "image": new URL("http://via.placeholder.com/350x151")
+      "image": this.location.prepareExternalUrl("assets/helper-box-images/image4.jpg")
     },
     'annual_turnover': {
       "title": "Average Annual Employee Turnover",
       "description": "Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
       "learnmore": new URL(window.location.href),
-      "image": new URL("http://via.placeholder.com/350x152")
+      "image": this.location.prepareExternalUrl("assets/helper-box-images/image3.jpg")
     },
     'avg_wage': {
       "title": "Average Hourly Wage of Full-time Employees (FTEs)",
       "description": "Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
       "learnmore": new URL(window.location.href),
-      "image": new URL("http://via.placeholder.com/350x153")
+      "image": this.location.prepareExternalUrl("assets/helper-box-images/image2.jpg")
     },
     'avg_it': {
       "title": "IT Staff Average Hourly Wage",
       "description": "Integer faucibus ipsum nibh pellentesque malesuada eget neque quis vestibulum. Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
       "learnmore": new URL(window.location.href),
-      "image": new URL("http://via.placeholder.com/350x154")
+      "image": this.location.prepareExternalUrl("assets/helper-box-images/image1.jpg")
     },
     'num_app': {
       "title": "Number of Apps and Systems",
       "description": "Maecenas eu sapien in erat dapibus semper sit amet vel risus. Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. ",
       "learnmore": new URL(window.location.href),
-      "image": new URL("http://via.placeholder.com/350x155")
+      "image": this.location.prepareExternalUrl("assets/helper-box-images/image5.jpg")
     }
   }
 
