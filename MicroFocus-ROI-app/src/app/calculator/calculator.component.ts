@@ -13,9 +13,9 @@ export class CalculatorComponent implements OnInit {
   categories = [
     {
       id: 'id_gov',
-      name: "Identity Governance",
+      name: "Identity Management",
       savings: {},
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci."
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci.<br><a href='#'>Pricing Guide</a>"
     },
     {
       id: 'ac_mgmt',
