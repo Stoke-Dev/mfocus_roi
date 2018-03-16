@@ -4,7 +4,7 @@
       <h2 class="animated fade-in-up heading">Explore what Micro Focus can do for you</h2>
       <p class="animated fade-in info-text mf-subtitle">Please review our solutions below</p>
 
-      <div class="animated fade-in"><a routerLink="/begin" routerLinkActive="active">&#8249; Change Information</a></div>
+      <div class="animated fade-in" style="animation-delay:.8s"><a routerLink="/begin" routerLinkActive="active">&#8249; Change Information</a></div>
     </div>
     <div class="mf-solutions-list col-12">
       <div class="box row animated fade-in" style="animation-delay: .2s;" *ngFor="let cat of categories">
@@ -23,7 +23,7 @@
         </div>
 
         <div class="mf-solution-cta col-12">
-            <a class="btn btn-light" href="#">Learn More</a> <div class="mf-savings">Save {{ cat.savings.savings | currency: dollar }} / year</div>
+            <a class="btn btn-light" href="#">Learn More</a> <div class="mf-savings">Save {{ cat.savings.savings | currency: dollar }} in 5 years</div>
         </div>
       </div>
       <a class="btn btn-primary mf-change-btn" href="#">Contact Me</a>
