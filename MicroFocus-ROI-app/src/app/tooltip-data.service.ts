@@ -10,8 +10,8 @@ export class TooltipDataService {
   public showCaret: boolean;
   public caretOffset: number;
 
-  public learnMoreUrl: Url;
-  public imageUrl: Url;
+  public learnMoreUrl: any;
+  public imageUrl: any;
 
 
   constructor() { }
