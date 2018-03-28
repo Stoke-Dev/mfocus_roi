@@ -791,7 +791,7 @@ var MfClientDataService = /** @class */ (function () {
         year5 = year4 + accMgmt.savings - (0 + ACC_MGMT_COST_MFR + 0);
         accMgmt.yearRoi = [year1, year2, year3, year4, year5];
         accMgmt.savings = year5;
-        return [idenGov, accMgmt, privMgmt];
+        return [accMgmt, idenGov, privMgmt];
     };
     MfClientDataService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
