@@ -1,6 +1,6 @@
 body.mf-app {
     overflow-x: hidden;
-    background-color: rgb(221, 248, 255); /* I intentionally added grey/made lighter than the blue in the template, because too much blue is a washout (on my monitor). Hope that's okay. */
+    background-color: rgb(221, 248, 255);
 }
 
 body.mf-app * {
@@ -13,7 +13,7 @@ body.mf-app p {
 }
 
 body.mf-app h1 {
-    font-size: 48px;
+    font-size: 41px;
     font-weight: 200;
 }
 
