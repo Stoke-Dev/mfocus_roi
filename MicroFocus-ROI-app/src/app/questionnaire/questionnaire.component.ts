@@ -28,10 +28,10 @@ export class QuestionnaireComponent implements OnInit {
 
   ngOnInit() {
     this._toolTip.title = "The Micro Focus Advantage";
-    this._toolTip.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.";
+    this._toolTip.description = "It has been widely documented by analysts and industry pundits alike that any additional spending on IT infrastructures will need to show business value. A quick way to illustrate value is through ROI.  Answer a few simple questions to learn how our identity and access management platform will drive true business value and provide a significant return on your investment.";
     this._toolTip.showCaret = false;
     this._toolTip.caretOffset = 96;
-    this._toolTip.learnMoreUrl = new URL(window.location.href);
+    this._toolTip.learnMoreUrl = new URL("https://www.netiq.com/solutions/identity-access-management/identity-powered-security.html");
     this._toolTip.imageUrl = this.location.prepareExternalUrl("assets/helper-box-images/image1.jpg");
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
@@ -46,32 +46,32 @@ export class QuestionnaireComponent implements OnInit {
   tooltipData = {
     'num_staff': {
       "title": "Number of Full-time Employees (FTEs)",
-      "description": "Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-      "learnmore": new URL(window.location.href),
+      "description": "Many of the benefits are realized at a per-employee basis and as such the number of full time employees is required to calculate the total value that can be realized.  Casual staff – particularly in health and retail – have a very different benefits profile and are calculated separately.",
+      "learnmore": null,
       "image": this.location.prepareExternalUrl("assets/helper-box-images/image4.jpg")
     },
     'annual_turnover': {
       "title": "Average Annual Employee Turnover",
-      "description": "Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-      "learnmore": new URL(window.location.href),
+      "description": "Many large benefits arise when staff are on-boarded and off-boarded from an organization.  To determine the extent of this benefit the number of staff that join and leave an organization is required.",
+      "learnmore": null,
       "image": this.location.prepareExternalUrl("assets/helper-box-images/image3.jpg")
     },
     'avg_wage': {
       "title": "Average Hourly Wage of Full-time Employees (FTEs)",
-      "description": "Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-      "learnmore": new URL(window.location.href),
+      "description": "The benefits are based on time savings and to dollarize the benefits we need to know the average hourly wage.",
+      "learnmore": null,
       "image": this.location.prepareExternalUrl("assets/helper-box-images/image2.jpg")
     },
     'avg_it': {
       "title": "IT Staff Average Hourly Wage",
-      "description": "Integer faucibus ipsum nibh pellentesque malesuada eget neque quis vestibulum. Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-      "learnmore": new URL(window.location.href),
+      "description": "In addition to providing benefits to end users (lost time, etc.) identity powered automation can not only reduce the to deliver access, but also reduce the time IT staff need to deliver these outcomes.",
+      "learnmore": null,
       "image": this.location.prepareExternalUrl("assets/helper-box-images/image1.jpg")
     },
     'num_app': {
       "title": "Number of Apps and Systems",
-      "description": "Maecenas eu sapien in erat dapibus semper sit amet vel risus. Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. ",
-      "learnmore": new URL(window.location.href),
+      "description": "Identity and access management reduce the complexity of an IT landscape by providing a logical bus architecture.  The benefit from reduced complexity is calculated based on the number of applications.  This number is also used to calculate the effort required to convert to this bus architecture.",
+      "learnmore": null,
       "image": this.location.prepareExternalUrl("assets/helper-box-images/image5.jpg")
     }
   }
