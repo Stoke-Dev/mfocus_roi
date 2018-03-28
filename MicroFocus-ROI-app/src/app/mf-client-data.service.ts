@@ -144,7 +144,7 @@ export class MfClientDataService {
 
     accMgmt.savings = year5;
 
-    return [idenGov, accMgmt, privMgmt];
+    return [accMgmt, idenGov, privMgmt];
   }
 
 }
