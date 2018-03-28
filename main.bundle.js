@@ -180,7 +180,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/calculator/calculator.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mf-calc container\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h2 class=\"animated fade-in-up heading\">Explore what Micro Focus can do for you</h2>\n      <p class=\"animated fade-in info-text mf-subtitle\">Please review our solutions below</p>\n\n      <div class=\"animated fade-in\" style=\"animation-delay:.8s\"><a routerLink=\"/begin\" routerLinkActive=\"active\">&#8249; Change Information</a></div>\n    </div>\n    <div class=\"mf-solutions-list col-12\">\n      <div class=\"box row animated fade-in\" style=\"animation-delay: .2s;\" *ngFor=\"let cat of categories\">\n        <div class=\"col-12\">\n          <div class=\"mf-title\">\n            {{ cat.name }}\n          </div>\n        </div>\n\n        <div class=\"mf-solution-desc col-md-4\" [innerHTML]=\"cat.description\">\n            <!-- {{ cat.description }} -->\n        </div>\n\n        <div class=\"mf-charts col-md-8\">\n          <app-charts [data]=\"cat.savings.yearRoi\"></app-charts>\n        </div>\n\n        <div class=\"mf-solution-cta col-12\">\n            <a class=\"btn btn-light\" href=\"#\">Learn More</a> <div class=\"mf-savings\">Save {{ cat.savings.savings | currency: dollar }} in 5 years</div>\n        </div>\n      </div>\n      <a class=\"btn btn-primary mf-change-btn\" href=\"#\">Contact Me</a>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"mf-calc container\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <h2 class=\"animated fade-in-up heading\">Explore what Micro Focus can do for you</h2>\n      <p class=\"animated fade-in info-text mf-subtitle\">Please review our solutions below</p>\n\n      <div class=\"animated fade-in\" style=\"animation-delay:.8s\"><a routerLink=\"/begin\" routerLinkActive=\"active\">&#8249; Change Information</a></div>\n    </div>\n    <div class=\"mf-solutions-list col-12\">\n      <div class=\"box row animated fade-in\" style=\"animation-delay: .2s;\" *ngFor=\"let cat of categories\">\n        <div class=\"col-12\">\n          <div class=\"mf-title\">\n            {{ cat.name }}\n          </div>\n        </div>\n\n        <div class=\"mf-solution-desc col-md-4\" [innerHTML]=\"cat.description\">\n            <!-- {{ cat.description }} -->\n        </div>\n\n        <div class=\"mf-charts col-md-8\">\n          <app-charts [data]=\"cat.savings.yearRoi\"></app-charts>\n        </div>\n\n        <div class=\"mf-solution-cta col-12\">\n            <a class=\"btn btn-light\" href=\"#\">Learn More</a> <div class=\"mf-savings\">Save {{ cat.savings.savings | currency: dollar }} over 5 years</div>\n        </div>\n      </div>\n      <a class=\"btn btn-primary mf-change-btn\" href=\"#\">Contact Me</a>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -210,22 +210,22 @@ var CalculatorComponent = /** @class */ (function () {
         this.router = router;
         this.categories = [
             {
-                id: 'id_gov',
-                name: "Identity Management",
-                savings: {},
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci.<br><a href='#'>Pricing Guide</a>"
-            },
-            {
                 id: 'ac_mgmt',
                 name: "Access Management",
                 savings: {},
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci."
+                description: "The breadth of our access management solution enables our customers to offer simpler, more complete secure access to business data and systems. Our delivery model works regardless of where information is hosted (in the Cloud, on a mainframe, in the data center), where it is accessed from (mobile, desktop, devices), and who is accessing it (user, device, or thing)."
+            },
+            {
+                id: 'id_gov',
+                name: "Identity Management",
+                savings: {},
+                description: "Our Identity Management platform reduces risk and improves compliance by providing business users, IT and compliance teams with the ability to seamlessly collaborate in the process of governing user access and proving the organization is in control of the digital environment.<br><a href='#'>Pricing Guide</a>"
             },
             {
                 id: 'prv_mgmt',
                 name: "Privilege Management",
                 savings: {},
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie libero elit, quis placerat erat vehicula sed. Sed vitae orci efficitur, dignissim diam sit amet, tempor velit. Nam imperdiet, turpis in dictum maximus, nisl diam dapibus nibh, sit amet lacinia eros ante ut orci."
+                description: "Our Privilege management capabilities provide the ability to monitor, track and report changes to systems and data and control and monitor privileged users, who can inflict enormous damage with their access to critical information."
             }
         ];
     }
@@ -539,7 +539,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/helper-box/helper-box.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mf-tooltip\">\n  <div [class.active]=\"_data.showCaret\" class=\"mf-tooltop-caret\"><div [ngStyle]=\"{'margin-top.px': _data.caretOffset - 96}\" class=\"mf-thecaret\"></div></div>\n  <img [attr.src]=\"_data.imageUrl\" alt=\"\">\n  <div class=\"mf-desc\">\n    <h4>{{ _data.title }}</h4>\n    <p>{{ _data.description }}</p>\n    <a [attr.href]=\"_data.learnMoreUrl\" target=\"_blank\" class=\"mf-learn-more\">Learn More</a>\n  </div>\n</div>"
+module.exports = "<div class=\"mf-tooltip\">\n  <div [class.active]=\"_data.showCaret\" class=\"mf-tooltop-caret\"><div [ngStyle]=\"{'margin-top.px': _data.caretOffset - 96}\" class=\"mf-thecaret\"></div></div>\n  <img [attr.src]=\"_data.imageUrl\" alt=\"\">\n  <div class=\"mf-desc\">\n    <h4>{{ _data.title }}</h4>\n    <p>{{ _data.description }}</p>\n    <a *ngIf=\"_data.learnMoreUrl\" [attr.href]=\"_data.learnMoreUrl\" target=\"_blank\" class=\"mf-learn-more\">Learn More</a>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -603,7 +603,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<html>\n<div class=\"row home-objects\">\n  <div class=\"col main-stuff\"> \n    <div class=\"pie fade-in\">\n      <div class=\"back\">\n          <div class=\"mask\">\n            <div class=\"part anim\">\n            </div>\n          </div>\n          <div class=hole></div>\n        </div>\n      </div>\n      <div class=\"not-pie\">\n        <h1 class=\"animated fade-in-up heading\">Calculate your ROI from choosing Micro Focus</h1>\n        <p class=\"info-text fade-in mf-sub-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\n          incididunt ut ero labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\n          exercitation ullamco.</p>\n        <nav>\n          <a class=\"btn btn-primary fade-in\" style=\"margin-right:8px;\" href=\"https://www.microfocus.com/\">Our Solutions</a> <!-- Add  target=\"_blank\" after the href to open in new tab. Not sure if we want to or not. -->\n          <a class=\"btn btn-primary fade-in mf-featured-cta\" routerLink=\"/begin\" routerLinkActive=\"active\">Let's Begin</a>\n        </nav>\n      </div>\n    </div>\n  </div>\n</html>\n"
+module.exports = "<html>\n<div class=\"row home-objects\">\n  <div class=\"col main-stuff\"> \n    <div class=\"pie fade-in\">\n      <div class=\"back\">\n          <div class=\"mask\">\n            <div class=\"part anim\">\n            </div>\n          </div>\n          <div class=hole></div>\n        </div>\n      </div>\n      <div class=\"not-pie\">\n        <h1 class=\"animated fade-in-up heading\">Calculate your ROI from choosing the Micro Focus Identity Powers Platform</h1>\n        <p class=\"info-text fade-in mf-sub-text\">Here at Micro Focus our adaptive identity-centric expertise gives organizations an integrated platform for Identity, Access, and Privilege Management that drives the Modern IT ecosystem. We fuel business innovation that will provide an improved user and customer experience, and the competitive advantage organizations need to thrive. We believe identity powers everything.</p>\n        <nav>\n          <a class=\"btn btn-primary fade-in\" style=\"margin-right:8px;\" href=\"https://www.netiq.com/solutions/identity-access-management/\">Our Solutions</a> <!-- Add  target=\"_blank\" after the href to open in new tab. Not sure if we want to or not. -->\n          <a class=\"btn btn-primary fade-in mf-featured-cta\" routerLink=\"/begin\" routerLinkActive=\"active\">Let's Begin</a>\n        </nav>\n      </div>\n    </div>\n  </div>\n</html>\n"
 
 /***/ }),
 
@@ -862,32 +862,32 @@ var QuestionnaireComponent = /** @class */ (function () {
         this.tooltipData = {
             'num_staff': {
                 "title": "Number of Full-time Employees (FTEs)",
-                "description": "Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-                "learnmore": new URL(window.location.href),
+                "description": "Many of the benefits are realized at a per-employee basis and as such the number of full time employees is required to calculate the total value that can be realized.  Casual staff – particularly in health and retail – have a very different benefits profile and are calculated separately.",
+                "learnmore": null,
                 "image": this.location.prepareExternalUrl("assets/helper-box-images/image4.jpg")
             },
             'annual_turnover': {
                 "title": "Average Annual Employee Turnover",
-                "description": "Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-                "learnmore": new URL(window.location.href),
+                "description": "Many large benefits arise when staff are on-boarded and off-boarded from an organization.  To determine the extent of this benefit the number of staff that join and leave an organization is required.",
+                "learnmore": null,
                 "image": this.location.prepareExternalUrl("assets/helper-box-images/image3.jpg")
             },
             'avg_wage': {
                 "title": "Average Hourly Wage of Full-time Employees (FTEs)",
-                "description": "Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-                "learnmore": new URL(window.location.href),
+                "description": "The benefits are based on time savings and to dollarize the benefits we need to know the average hourly wage.",
+                "learnmore": null,
                 "image": this.location.prepareExternalUrl("assets/helper-box-images/image2.jpg")
             },
             'avg_it': {
                 "title": "IT Staff Average Hourly Wage",
-                "description": "Integer faucibus ipsum nibh pellentesque malesuada eget neque quis vestibulum. Pellentesque malesuada eget neque quis vestibulum. Consectetur adipiscing elit. Nulla ut ultricies diam.  Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.",
-                "learnmore": new URL(window.location.href),
+                "description": "In addition to providing benefits to end users (lost time, etc.) identity powered automation can not only reduce the to deliver access, but also reduce the time IT staff need to deliver these outcomes.",
+                "learnmore": null,
                 "image": this.location.prepareExternalUrl("assets/helper-box-images/image1.jpg")
             },
             'num_app': {
                 "title": "Number of Apps and Systems",
-                "description": "Maecenas eu sapien in erat dapibus semper sit amet vel risus. Consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. ",
-                "learnmore": new URL(window.location.href),
+                "description": "Identity and access management reduce the complexity of an IT landscape by providing a logical bus architecture.  The benefit from reduced complexity is calculated based on the number of applications.  This number is also used to calculate the effort required to convert to this bus architecture.",
+                "learnmore": null,
                 "image": this.location.prepareExternalUrl("assets/helper-box-images/image5.jpg")
             }
         };
@@ -924,10 +924,10 @@ var QuestionnaireComponent = /** @class */ (function () {
     });
     QuestionnaireComponent.prototype.ngOnInit = function () {
         this._toolTip.title = "The Micro Focus Advantage";
-        this._toolTip.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut ultricies diam. Pellentesque malesuada eget neque quis vestibulum. Integer faucibus ipsum nibh, ut lobortis mauris sagittis a. Maecenas eu sapien in erat dapibus semper sit amet vel risus.";
+        this._toolTip.description = "It has been widely documented by analysts and industry pundits alike that any additional spending on IT infrastructures will need to show business value. A quick way to illustrate value is through ROI.  Answer a few simple questions to learn how our identity and access management platform will drive true business value and provide a significant return on your investment.";
         this._toolTip.showCaret = false;
         this._toolTip.caretOffset = 96;
-        this._toolTip.learnMoreUrl = new URL(window.location.href);
+        this._toolTip.learnMoreUrl = new URL("https://www.netiq.com/solutions/identity-access-management/identity-powered-security.html");
         this._toolTip.imageUrl = this.location.prepareExternalUrl("assets/helper-box-images/image1.jpg");
         this.router.events.subscribe(function (evt) {
             if (!(evt instanceof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* NavigationEnd */])) {
