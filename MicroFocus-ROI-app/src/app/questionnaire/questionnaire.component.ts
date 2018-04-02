@@ -46,31 +46,31 @@ export class QuestionnaireComponent implements OnInit {
   tooltipData = {
     'num_staff': {
       "title": "Number of Full-time Employees (FTEs)",
-      "description": "Many of the benefits are realized at a per-employee basis and as such the number of full time employees is required to calculate the total value that can be realized.  Casual staff – particularly in health and retail – have a very different benefits profile and are calculated separately.",
+      "description": "Many benefits are realized on a per-employee basis, so the number of full-time employees is used to calculate the total value that can be realized. Casual staff — particularly in the health and retail industries — have a very different benefits profile and are calculated separately.",
       "learnmore": null,
       "image": this.location.prepareExternalUrl("assets/helper-box-images/image4.jpg")
     },
     'annual_turnover': {
       "title": "Average Annual Employee Turnover",
-      "description": "Many large benefits arise when staff are on-boarded and off-boarded from an organization.  To determine the extent of this benefit the number of staff that join and leave an organization is required.",
+      "description": "Many benefits accrue from staff onboarding or offboarding. To determine their effects, the number of staff that join and leave an organization is required.",
       "learnmore": null,
       "image": this.location.prepareExternalUrl("assets/helper-box-images/image3.jpg")
     },
     'avg_wage': {
       "title": "Average Hourly Wage of Full-time Employees (FTEs)",
-      "description": "The benefits are based on time savings and to dollarize the benefits we need to know the average hourly wage.",
+      "description": "The benefits are based on time savings. To calculate, we need to know the average hourly wage.",
       "learnmore": null,
       "image": this.location.prepareExternalUrl("assets/helper-box-images/image2.jpg")
     },
     'avg_it': {
       "title": "IT Staff Average Hourly Wage",
-      "description": "In addition to providing benefits to end users (lost time, etc.) identity powered automation can not only reduce the to deliver access, but also reduce the time IT staff need to deliver these outcomes.",
+      "description": "In addition to providing benefits to end users (lost time, etc.) identity-powered automation can not only reduce the to deliver access, but also reduce the time IT staff need to deliver these outcomes. Used to calculate benefits from more efficient use of IT staff. Some common IT functions that may be eliminated with identity-powered automation.",
       "learnmore": null,
       "image": this.location.prepareExternalUrl("assets/helper-box-images/image1.jpg")
     },
     'num_app': {
       "title": "Number of Apps and Systems",
-      "description": "Identity and access management reduce the complexity of an IT landscape by providing a logical bus architecture.  The benefit from reduced complexity is calculated based on the number of applications.  This number is also used to calculate the effort required to convert to this bus architecture.",
+      "description": "Identity and access management reduces the complexity of an IT landscape by providing a logical bus architecture. The benefit from reduced complexity is calculated based on the number of applications you use. This number is also used to calculate the effort required to convert to this bus architecture.",
       "learnmore": null,
       "image": this.location.prepareExternalUrl("assets/helper-box-images/image5.jpg")
     }
