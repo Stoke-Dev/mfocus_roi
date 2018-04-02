@@ -213,19 +213,19 @@ var CalculatorComponent = /** @class */ (function () {
                 id: 'ac_mgmt',
                 name: "Access Management",
                 savings: {},
-                description: "The breadth of our access management solution enables our customers to offer simpler, more complete secure access to business data and systems. Our delivery model works regardless of where information is hosted (in the Cloud, on a mainframe, in the data center), where it is accessed from (mobile, desktop, devices), and who is accessing it (user, device, or thing)."
+                description: "The breadth of our access management solution enables our customers to offer employees simpler, yet much more more secure access to business data and systems. Our delivery model works regardless of where information is hosted (in the cloud, on a mainframe, or in the data center), where it is accessed (from desktop computers or mobile devices), and who is accessing it (a human user, a device, or a connected “thing”)."
             },
             {
                 id: 'id_gov',
                 name: "Identity Management",
                 savings: {},
-                description: "Our Identity Management platform reduces risk and improves compliance by providing business users, IT and compliance teams with the ability to seamlessly collaborate in the process of governing user access and proving the organization is in control of the digital environment.<br><a href='#'>Pricing Guide</a>"
+                description: "Our identity governance platform reduces risk and improves compliance by providing business users, IT departments, and compliance teams with the ability to seamlessly collaborate in providing user access, placing the organization firmly in control of the digital environment.<br><a href='#'>Pricing Guide</a>"
             },
             {
                 id: 'prv_mgmt',
                 name: "Privilege Management",
                 savings: {},
-                description: "Our Privilege management capabilities provide the ability to monitor, track and report changes to systems and data and control and monitor privileged users, who can inflict enormous damage with their access to critical information."
+                description: "Our privilege management capabilities give you provide the ability to monitor the accounts that access your most vital information and record all of their actions. If any suspicious behavior occurs, your security team is notified immediately to stop a breach in its tracks."
             }
         ];
     }
@@ -862,31 +862,31 @@ var QuestionnaireComponent = /** @class */ (function () {
         this.tooltipData = {
             'num_staff': {
                 "title": "Number of Full-time Employees (FTEs)",
-                "description": "Many of the benefits are realized at a per-employee basis and as such the number of full time employees is required to calculate the total value that can be realized.  Casual staff – particularly in health and retail – have a very different benefits profile and are calculated separately.",
+                "description": "Many benefits are realized on a per-employee basis, so the number of full-time employees is used to calculate the total value that can be realized. Casual staff — particularly in the health and retail industries — have a very different benefits profile and are calculated separately.",
                 "learnmore": null,
                 "image": this.location.prepareExternalUrl("assets/helper-box-images/image4.jpg")
             },
             'annual_turnover': {
                 "title": "Average Annual Employee Turnover",
-                "description": "Many large benefits arise when staff are on-boarded and off-boarded from an organization.  To determine the extent of this benefit the number of staff that join and leave an organization is required.",
+                "description": "Many benefits accrue from staff onboarding or offboarding. To determine their effects, the number of staff that join and leave an organization is required.",
                 "learnmore": null,
                 "image": this.location.prepareExternalUrl("assets/helper-box-images/image3.jpg")
             },
             'avg_wage': {
                 "title": "Average Hourly Wage of Full-time Employees (FTEs)",
-                "description": "The benefits are based on time savings and to dollarize the benefits we need to know the average hourly wage.",
+                "description": "The benefits are based on time savings. To calculate, we need to know the average hourly wage.",
                 "learnmore": null,
                 "image": this.location.prepareExternalUrl("assets/helper-box-images/image2.jpg")
             },
             'avg_it': {
                 "title": "IT Staff Average Hourly Wage",
-                "description": "In addition to providing benefits to end users (lost time, etc.) identity powered automation can not only reduce the to deliver access, but also reduce the time IT staff need to deliver these outcomes.",
+                "description": "In addition to providing benefits to end users (lost time, etc.) identity-powered automation can not only reduce the to deliver access, but also reduce the time IT staff need to deliver these outcomes. Used to calculate benefits from more efficient use of IT staff. Some common IT functions that may be eliminated with identity-powered automation.",
                 "learnmore": null,
                 "image": this.location.prepareExternalUrl("assets/helper-box-images/image1.jpg")
             },
             'num_app': {
                 "title": "Number of Apps and Systems",
-                "description": "Identity and access management reduce the complexity of an IT landscape by providing a logical bus architecture.  The benefit from reduced complexity is calculated based on the number of applications.  This number is also used to calculate the effort required to convert to this bus architecture.",
+                "description": "Identity and access management reduces the complexity of an IT landscape by providing a logical bus architecture. The benefit from reduced complexity is calculated based on the number of applications you use. This number is also used to calculate the effort required to convert to this bus architecture.",
                 "learnmore": null,
                 "image": this.location.prepareExternalUrl("assets/helper-box-images/image5.jpg")
             }
