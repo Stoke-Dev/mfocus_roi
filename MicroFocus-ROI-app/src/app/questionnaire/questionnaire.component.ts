@@ -64,7 +64,7 @@ export class QuestionnaireComponent implements OnInit {
     },
     'avg_it': {
       "title": "IT Staff Average Hourly Wage",
-      "description": "In addition to providing benefits to end users (lost time, etc.) identity-powered automation can not only reduce the to deliver access, but also reduce the time IT staff need to deliver these outcomes. Used to calculate benefits from more efficient use of IT staff. Some common IT functions that may be eliminated with identity-powered automation.",
+      "description": "In addition to providing benefits to end users (lost time, etc.) identity-powered security can not only reduce the effort to deliver access, but also reduce the time IT staff need to deliver these outcomes. Used to calculate benefits from the more efficient use of IT staff. Some redundant IT functions that may be eliminated with identity-powered automation.",
       "learnmore": null,
       "image": this.location.prepareExternalUrl("assets/helper-box-images/image1.jpg")
     },
