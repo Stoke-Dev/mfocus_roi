@@ -1,9 +1,9 @@
 <div class="mf-tooltip">
-  <div [class.active]="_data.showCaret" class="mf-tooltop-caret"><div [ngStyle]="{'margin-top.px': _data.caretOffset - 96}" class="mf-thecaret"></div></div>
-  <img [attr.src]="_data.imageUrl" alt="">
+  <div [class.active]="ttShowCaret" class="mf-tooltop-caret"><div [ngStyle]="{'margin-top.px': ttCaretOffset - 96}" class="mf-thecaret"></div></div>
+  <img [attr.src]="ttImgURL" alt="">
   <div class="mf-desc">
-    <h4>{{ _data.title }}</h4>
-    <p>{{ _data.description }}</p>
-    <a *ngIf="_data.learnMoreUrl" [attr.href]="_data.learnMoreUrl" target="_blank" class="mf-learn-more">Learn More</a>
+    <h4>{{ ttTitle }}</h4>
+    <p>{{ ttDescription }}</p>
+    <a *ngIf="ttLearnMore" [attr.href]="ttLearnMore" target="_blank" class="mf-learn-more">Learn More</a>
   </div>
 </div>
