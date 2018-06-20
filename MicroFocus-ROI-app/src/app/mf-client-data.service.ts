@@ -105,19 +105,19 @@ export class MfClientDataService {
     let ACC_MGMT_COST_MFR = ACC_MGMT_COST_LFR*MFR_rate;
     let ACC_MGMT_COST_CFR = LCL_CR_rate*(LCL_CR_AM_setup+LCL_CR_AM_integration*SFT_AM_apps)*(1+LCL_CR_requirements_OH+LCL_CR_post_OH);
 
-    console.log("S_SSO-" +S_SSO )
-    console.log("ACCESS_BUS_DEVTEST-" +ACCESS_BUS_DEVTEST )
-    console.log("ACCESS_BUS_MAINTSAV-" +ACCESS_BUS_MAINTSAV )
+    console.log("S_SSO -", S_SSO )
+    console.log("ACCESS_BUS_DEVTEST -", ACCESS_BUS_DEVTEST )
+    console.log("ACCESS_BUS_MAINTSAV -", ACCESS_BUS_MAINTSAV )
 
-    console.log("ID_REGIST-" +ID_REGIST )
-    console.log("BIRTHRIGHT_ENT-" +BIRTHRIGHT_ENT )
-    console.log("PASS_RESET-" +PASS_RESET )
-    console.log("ENT_CHANGES-" +ENT_CHANGES )
-    console.log("WORKFLOWS-" +WORKFLOWS )
-    console.log("DECISION_SPT-" +DECISION_SPT )
-    console.log("ID_SEP-" +ID_SEP )
-    console.log("ID_BUS_DEVTEST-" +ID_BUS_DEVTEST )
-    console.log("ID_BUS_MAINTSAV-" +ID_BUS_MAINTSAV )
+    console.log("ID_REGIST -", ID_REGIST )
+    console.log("BIRTHRIGHT_ENT -", BIRTHRIGHT_ENT )
+    console.log("PASS_RESET -", PASS_RESET )
+    console.log("ENT_CHANGES -", ENT_CHANGES )
+    console.log("WORKFLOWS -", WORKFLOWS )
+    console.log("DECISION_SPT -", DECISION_SPT )
+    console.log("ID_SEP -", ID_SEP )
+    console.log("ID_BUS_DEVTEST -", ID_BUS_DEVTEST )
+    console.log("ID_BUS_MAINTSAV -", ID_BUS_MAINTSAV )
     
     //Savings
     idenGov.savings = ID_REGIST + BIRTHRIGHT_ENT + PASS_RESET + ENT_CHANGES + WORKFLOWS + DECISION_SPT + ID_SEP + ID_BUS_DEVTEST + ID_BUS_MAINTSAV;
