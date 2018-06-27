@@ -5,7 +5,6 @@ body.mf-app {
 
 body.mf-app * {
     font-family: 'Helvetica Neue', 'Roboto', sans-serif;
-    /* color: #293138; */ /* For some reason this forces FontAwesome fonts to be black. I can't override this with this here. I'll need to iron that out later. */
 }
 
 body.mf-app p {

@@ -23,7 +23,7 @@ export class CalculatorComponent implements OnInit {
       id: 'id_gov',
       name: "Identity Management",
       savings: {},
-      description: "Our identity governance platform reduces risk and improves compliance by providing business users, IT departments, and compliance teams with the ability to seamlessly collaborate in providing user access, placing the organization firmly in control of the digital environment.<br><a href='#'>Pricing Guide</a>",
+      description: "Our identity governance platform reduces risk and improves compliance by providing business users, IT departments, and compliance teams with the ability to seamlessly collaborate in providing user access, placing the organization firmly in control of the digital environment.",
       url: "https://www.netiq.com/solutions/identity-access-management/it-regulatory-compliance.html",
       hidden: false
     },
