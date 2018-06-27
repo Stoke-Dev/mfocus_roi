@@ -14,18 +14,21 @@ export class MfClientDataService {
     //OUTPUT VARIABLES
     let idenGov = {
       "savings": 0,
-      "yearRoi": [0,0,0,0,0]
+      "yearRoi": [0,0,0,0,0],
+      "components": []
     };
     let accMgmt = {
       "savings": 0,
       "roiY1": 0,
-      "yearRoi": [0,0,0,0,0]
+      "yearRoi": [0,0,0,0,0],
+      "components": []
     };
     let privMgmt = {
       "savings": 0,
-      "yearRoi": [0,0,0,0,0]
+      "yearRoi": [0,0,0,0,0],
+      "components": []
     };
-  
+
     //Remap form input variables
     let SFT_Count = this.numStaff;
     let SFT_Wage = this.avgWage;
@@ -35,50 +38,50 @@ export class MfClientDataService {
     let SFT_IDM_apps = this.numApps;
 
     /* Static Constants */
-    let SFT_AM_apps_used = 8;
-    let LCL_SSO_avoidance_time = 10;
-    let LCL_working_days = 220;
-    let LCL_AB_app_cust_time = 115;
-    let LCL_AB_savings_rate = .5;
-    let LCL_IB_maintenance_rate = .2;
-    let LCL_helpdesk_PR_cost = 25;
-    let SFT_Entitlement_count = 15;
-    let INF_Fulfilment_average_saving = 42;
-    let SFT_password_forgets = 5;
-    let SFT_SSPR_Rate = .5;
-    let SFT_Projects_proportion = .2;
-    let SFT_Projects_entitlements = 8;
-    let SFT_workflows = 2;
-    let INF_WF_average_saving = 57.50;
-    let SFT_entitlement_approval_rate = .3;
-    let LCL_approver_time = 10;
-    let LCL_approver_reduction_rate = .5;
-    let LCL_approver_wage = 70;
-    let LCL_IB_connections_avg = 2;
-    let LCL_IB_app_cust_time = 115;
-    let LCL_IB_savings_rate = .5;
-    let LFR_IDM_base = 1140;
-    let MFR_rate = .25;
-    let LFR_IDM_user = 46;
-    let LCL_CR_rate = 2000;
-    let LCL_CR_IDM_setup = 8;
-    let LCL_CR_IDM_Conn_simple = 5;
-    let INF_idm_connectors_simple = 4;
-    let LCL_CR_IDM_Conn_medium = 10;
-    let INF_idm_connectors_medium = 6;
-    let LCL_CR_IDM_Conn_complex = 20;
-    let INF_idm_connectors_complex = 10;
-    let LCL_CR_IDM_WF_simple = 5;
-    let INF_WF_simple = 3;
-    let LCL_CR_IDM_WF_medium = 10;
-    let INF_WF_medium = 4;
-    let LCL_CR_IDM_WF_complex = 20;
-    let INF_WF_complex = 3;
-    let LCL_CR_requirements_OH = .3;
-    let LCL_CR_post_OH = .25;
-    let LFR_AM_user = 18;
-    let LCL_CR_AM_setup = 1;
-    let LCL_CR_AM_integration = 1;
+    let SFT_AM_apps_used = 8,
+        LCL_SSO_avoidance_time = 10,
+        LCL_working_days = 220,
+        LCL_AB_app_cust_time = 115,
+        LCL_AB_savings_rate = .5,
+        LCL_IB_maintenance_rate = .2,
+        LCL_helpdesk_PR_cost = 25,
+        SFT_Entitlement_count = 15,
+        INF_Fulfilment_average_saving = 42,
+        SFT_password_forgets = 5,
+        SFT_SSPR_Rate = .5,
+        SFT_Projects_proportion = .2,
+        SFT_Projects_entitlements = 8,
+        SFT_workflows = 2,
+        INF_WF_average_saving = 57.50,
+        SFT_entitlement_approval_rate = .3,
+        LCL_approver_time = 10,
+        LCL_approver_reduction_rate = .5,
+        LCL_approver_wage = 70,
+        LCL_IB_connections_avg = 2,
+        LCL_IB_app_cust_time = 115,
+        LCL_IB_savings_rate = .5,
+        LFR_IDM_base = 1140,
+        MFR_rate = .25,
+        LFR_IDM_user = 46,
+        LCL_CR_rate = 2000,
+        LCL_CR_IDM_setup = 8,
+        LCL_CR_IDM_Conn_simple = 5,
+        INF_idm_connectors_simple = 4,
+        LCL_CR_IDM_Conn_medium = 10,
+        INF_idm_connectors_medium = 6,
+        LCL_CR_IDM_Conn_complex = 20,
+        INF_idm_connectors_complex = 10,
+        LCL_CR_IDM_WF_simple = 5,
+        INF_WF_simple = 3,
+        LCL_CR_IDM_WF_medium = 10,
+        INF_WF_medium = 4,
+        LCL_CR_IDM_WF_complex = 20,
+        INF_WF_complex = 3,
+        LCL_CR_requirements_OH = .3,
+        LCL_CR_post_OH = .25,
+        LFR_AM_user = 18,
+        LCL_CR_AM_setup = 1,
+        LCL_CR_AM_integration = 1;
 
 
     //Savings Computations
@@ -104,26 +107,16 @@ export class MfClientDataService {
     let ACC_MGMT_COST_LFR = LFR_AM_user*SFT_Count;
     let ACC_MGMT_COST_MFR = ACC_MGMT_COST_LFR*MFR_rate;
     let ACC_MGMT_COST_CFR = LCL_CR_rate*(LCL_CR_AM_setup+LCL_CR_AM_integration*SFT_AM_apps)*(1+LCL_CR_requirements_OH+LCL_CR_post_OH);
-
-    console.log("S_SSO -", S_SSO )
-    console.log("ACCESS_BUS_DEVTEST -", ACCESS_BUS_DEVTEST )
-    console.log("ACCESS_BUS_MAINTSAV -", ACCESS_BUS_MAINTSAV )
-
-    console.log("ID_REGIST -", ID_REGIST )
-    console.log("BIRTHRIGHT_ENT -", BIRTHRIGHT_ENT )
-    console.log("PASS_RESET -", PASS_RESET )
-    console.log("ENT_CHANGES -", ENT_CHANGES )
-    console.log("WORKFLOWS -", WORKFLOWS )
-    console.log("DECISION_SPT -", DECISION_SPT )
-    console.log("ID_SEP -", ID_SEP )
-    console.log("ID_BUS_DEVTEST -", ID_BUS_DEVTEST )
-    console.log("ID_BUS_MAINTSAV -", ID_BUS_MAINTSAV )
     
     //Savings
-    idenGov.savings = ID_REGIST + BIRTHRIGHT_ENT + PASS_RESET + ENT_CHANGES + WORKFLOWS + DECISION_SPT + ID_SEP + ID_BUS_DEVTEST + ID_BUS_MAINTSAV;
-    accMgmt.savings = S_SSO + ACCESS_BUS_DEVTEST + ACCESS_BUS_MAINTSAV;
-    privMgmt.savings = 0; //FINISH ME
-    
+    idenGov.savings  = ID_REGIST + BIRTHRIGHT_ENT + PASS_RESET + ENT_CHANGES + WORKFLOWS + DECISION_SPT + ID_SEP + ID_BUS_DEVTEST + ID_BUS_MAINTSAV;
+    accMgmt.savings  = S_SSO + ACCESS_BUS_DEVTEST + ACCESS_BUS_MAINTSAV;
+    privMgmt.savings = 0; //TODO: Get computation for this section from Micro Focus team
+
+    idenGov.components = [{label: "Identity Registration", val: Math.round(ID_REGIST)}, {label: "Birthright Entitlements", val: Math.round(BIRTHRIGHT_ENT)}, {label: "Password Resets", val: Math.round(PASS_RESET)}, {label: "Entitlement Changes", val: Math.round(ENT_CHANGES)}, {label: "Workflows", val: Math.round(WORKFLOWS)}, {label: "Decision Support", val: Math.round(DECISION_SPT)}, {label: "Identity Separation", val: Math.round(ID_SEP)}, {label: "Identity Bus - Dev/Test Savings", val: Math.round(ID_BUS_DEVTEST)}, {label: "Identity Bus - Maintenance Savings", val: Math.round(ID_BUS_MAINTSAV)}]
+
+    accMgmt.components = [{label: "Seamless Single Sign On", val: Math.round(S_SSO)}, {label: "Access Bus - Dev/Test savings", val: Math.round(ACCESS_BUS_DEVTEST)}, {label: "Access Bus - Maintenance savings", val: Math.round(ACCESS_BUS_MAINTSAV)}]
+
     //IDMGMT ROI
     let year1 = idenGov.savings - (ID_MGMT_COST_LFR + ID_MGMT_COST_MFR + ID_MGMT_COST_CFR);
     let year2 = year1 + idenGov.savings - (0 + ID_MGMT_COST_MFR + 0);

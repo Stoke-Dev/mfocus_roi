@@ -19,6 +19,7 @@
 
           <div class="mf-charts col-md-8">
             <app-charts [data]="cat.savings.yearRoi"></app-charts>
+            <div class="mf-calc-component-container"><div *ngFor="let comp of cat.savings.components" class="mf-calc-component">{{ comp.label + ": $" + ((comp.val)?comp.val:0) + "/yr." }}</div></div>
           </div>
 
           <div class="mf-solution-cta col-12">

@@ -56,6 +56,22 @@
     position: -webkit-sticky; /* Fix for disappearing Safari glitch */
 }
 
+.mf-calc-component-container {
+    padding-top: 11px;
+}
+
+.mf-calc-component {
+    display: inline-block;
+    padding: 3px 11px;
+    margin: 0 5px 5px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    background-color: #ddf8ff;
+    font-size: 11px;
+    color: rgba(41, 49, 56, .8);
+    border-radius: 99px;
+    letter-spacing: 0.2px;
+}
+
 .mf-change-btn {
     float: right;
 }
